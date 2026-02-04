@@ -12,10 +12,7 @@
         "city": "L'Aquila",
         "country": "Italy"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [13.3995, 42.3506]
-      }
+      "geometry": { "type": "Point", "coordinates": [13.3995, 42.3506] }
     },
     {
       "type": "Feature",
@@ -24,14 +21,11 @@
         "department": "School of Mathematical Sciences",
         "local_coordinator": "Laura Sberna",
         "role": "Beneficiary",
-        "address": "Mathematical Sciences Building, University Park, Nottingham NG7 2RD",
+        "address": "University Park, Nottingham NG7 2RD",
         "city": "Nottingham",
         "country": "United Kingdom"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-1.191197, 52.940502]
-      }
+      "geometry": { "type": "Point", "coordinates": [-1.191197, 52.940502] }
     },
     {
       "type": "Feature",
@@ -44,10 +38,7 @@
         "city": "Copenhagen",
         "country": "Denmark"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [12.571333, 55.696747]
-      }
+      "geometry": { "type": "Point", "coordinates": [12.571333, 55.696747] }
     },
     {
       "type": "Feature",
@@ -60,10 +51,7 @@
         "city": "Rome",
         "country": "Italy"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [12.5144, 41.9038]
-      }
+      "geometry": { "type": "Point", "coordinates": [12.5144, 41.9038] }
     },
     {
       "type": "Feature",
@@ -76,42 +64,60 @@
         "city": "Pisa",
         "country": "Italy"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [10.406, 43.718788]
-      }
+      "geometry": { "type": "Point", "coordinates": [10.406, 43.718788] }
     },
     {
       "type": "Feature",
       "properties": {
         "name": "Observatoire de Paris – PSL",
-        "department": "LUX (Laboratoire d’étude de l’Univers et des phénomènes eXtrêmes), Meudon site",
+        "department": "LUX (Laboratoire d’étude de l’Univers et des phénomènes eXtrêmes)",
         "local_coordinator": "Laura Bernard",
         "role": "Beneficiary",
-        "address": "5, place Jules Janssen, 92195 Meudon cedex",
+        "address": "5 place Jules Janssen, 92195 Meudon cedex",
         "city": "Meudon",
         "country": "France"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [2.227778, 48.81]
-      }
+      "geometry": { "type": "Point", "coordinates": [2.227778, 48.81] }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Perimeter Institute for Theoretical Physics",
+        "department": "Physics",
+        "local_coordinator": "Luis Lehner",
+        "role": "Partner",
+        "address": "31 Caroline St N, Waterloo, Ontario N2L 2Y5",
+        "city": "Waterloo",
+        "country": "Canada"
+      },
+      "geometry": { "type": "Point", "coordinates": [-80.5167, 43.4650] }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Johns Hopkins University",
-        "department": "Department of Physics and Astronomy",
-        "local_coordinator": "Emanuele Berti",
+        "name": "University of Illinois Urbana–Champaign",
+        "department": "Department of Physics",
+        "local_coordinator": "Helvi Witek",
         "role": "Partner",
-        "address": "Bloomberg Center, 3400 N. Charles St., Baltimore, MD 21218",
-        "city": "Baltimore",
+        "address": "1110 W Green St, Urbana, IL 61801",
+        "city": "Urbana–Champaign",
         "country": "United States"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-76.6205, 39.3299]
-      }
+      "geometry": { "type": "Point", "coordinates": [-88.2269, 40.1106] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kyoto University",
+        "department": "Department of Physics / Yukawa Institute for Theoretical Physics",
+        "local_coordinator": "Shinji Mukohyama",
+        "role": "Partner",
+        "address": "Kitashirakawa Oiwake-cho, Sakyo-ku, Kyoto 606-8502",
+        "city": "Kyoto",
+        "country": "Japan"
+      },
+      "geometry": { "type": "Point", "coordinates": [135.7809, 35.0270] }
     }
   ]
 }
