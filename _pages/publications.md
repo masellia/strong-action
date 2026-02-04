@@ -26,8 +26,9 @@ nav_order: 3
   <p class="pub-title">{{ p.title }}</p>
 
   <div class="pub-meta">
-    {% if p.date %}{{ p.date }}{% endif %}
-    {% if p.authors %}{% if p.date %} · {% endif %}{{ p.authors }}{% endif %}
+    {% if p.journal %}{{ p.journal }}{% endif %}
+    {% if p.date %}{% if p.journal %} · {% endif %}{{ p.date }}{% endif %}
+    {% if p.authors %}{% if p.journal or p.date %} · {% endif %}{{ p.authors }}{% endif %}
   </div>
 
   <div class="pub-actions">
