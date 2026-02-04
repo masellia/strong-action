@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: default
 title: STRONG Action
 permalink: /
 subtitle: "STRONG Action project website"
