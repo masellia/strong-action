@@ -31,11 +31,19 @@ nav_order: 3
 
   <div class="pub-actions">
     {% if p.arxiv %}
-      <a class="btn btn-outline-primary" target="_blank" rel="noopener"
+      <a class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener"
          href="https://arxiv.org/abs/{{ p.arxiv }}">arXiv</a>
+    {% endif %}
 
-      <a class="btn btn-success" target="_blank" rel="noopener"
-         href="https://inspirehep.net/api/arxiv/{{ p.arxiv }}?format=bibtex">BibTeX</a>
+    {% if p.doi %}
+      <a class="btn btn-sm btn-outline-success" target="_blank" rel="noopener"
+         href="https://doi.org/{{ p.doi }}">DOI</a>
+    {% elsif p.html %}
+      <a class="btn btn-sm btn-outline-success" target="_blank" rel="noopener"
+         href="{{ p.html }}">HTML</a>
+    {% elsif p.inspire %}
+      <a class="btn btn-sm btn-outline-success" target="_blank" rel="noopener"
+         href="{{ p.inspire }}">Record</a>
     {% endif %}
   </div>
 </div>
