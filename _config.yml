@@ -683,3 +683,6 @@ jsonresume:
   - languages
   - interests
   - references
+
+imagemagick:
+  enabled: false
