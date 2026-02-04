@@ -12,8 +12,7 @@
   },
   "geometry": { "type": "Point", "coordinates": [13.39954, 42.34985] }
 },
- 
-   {
+    {
       "type": "Feature",
       "properties": {
         "id": "unipi",
