@@ -39,3 +39,6 @@ group :other_plugins do
     # gem 'unicode_utils' -- should be already installed by jekyll
     # gem 'webrick' -- should be already installed by jekyll
 end
+
+# Needed by _config.yml plugins
+ gem 'jekyll-redirect-from'
