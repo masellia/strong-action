@@ -1,8 +1,7 @@
 ---
-layout: default
+layout: page
 title: STRONG Action
 permalink: /
-subtitle: "STRONG Action project website"
 ---
 
 Welcome to the STRONG Action website.
