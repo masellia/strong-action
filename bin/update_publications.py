@@ -19,7 +19,7 @@ def fetch_json(url: str) -> dict:
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "strong-action-publications-updater/1.0"
+            "User-Agent": "strong-action-publications-updater/1.1"
         },
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
@@ -36,13 +36,14 @@ def parse_inspire_record(arxiv_id: str) -> dict:
     data = fetch_json(INSPIRE_ARXIV_ENDPOINT.format(arxiv_id))
     meta = data.get("metadata", {}) or {}
 
+    # Title
     title = ""
     titles = meta.get("titles") or []
     if titles and isinstance(titles, list):
         title = (titles[0] or {}).get("title", "") or ""
     title = " ".join(title.split()).strip()
 
-    # Authors: take "authors" list, prefer full_name
+    # Authors (full_name)
     authors_list = meta.get("authors") or []
     authors = []
     for a in authors_list:
@@ -54,16 +55,14 @@ def parse_inspire_record(arxiv_id: str) -> dict:
             authors.append(name)
     authors_str = ", ".join(authors)
 
-    # Date: prefer earliest "preprint_date" or "date_published" if present, fallback created
+    # Date (prefer preprint_date / published / earliest)
     date_iso = meta.get("preprint_date") or meta.get("date_published") or meta.get("earliest_date") or ""
     if not date_iso:
-        # sometimes "imprints" includes date
         imprints = meta.get("imprints") or []
         if imprints and isinstance(imprints, list):
             date_iso = (imprints[0] or {}).get("date", "") or ""
     date_iso = str(date_iso)
 
-    # Parse date robustly (YYYY-MM-DD, YYYY-MM, YYYY)
     dt = None
     for fmt in ("%Y-%m-%d", "%Y-%m", "%Y"):
         try:
@@ -72,7 +71,7 @@ def parse_inspire_record(arxiv_id: str) -> dict:
         except Exception:
             continue
 
-    # If still missing, try arXiv ID year for new-style IDs: YYMM.number
+    # fallback: infer from new-style arXiv IDs YYMM.number
     if dt is None:
         m = re.match(r"^(\d{2})(\d{2})\.\d+", arxiv_id)
         if m:
@@ -86,23 +85,37 @@ def parse_inspire_record(arxiv_id: str) -> dict:
 
     date_str = f"{dt.day:02d} {MONTHS[dt.month-1]} {dt.year}" if dt.year >= 1901 else ""
 
+    # DOI (if present)
+    doi = ""
+    dois = meta.get("dois") or []
+    if isinstance(dois, list) and len(dois) > 0:
+        first = dois[0] or {}
+        if isinstance(first, dict):
+            doi = (first.get("value") or "").strip()
+
+    # INSPIRE literature page (use control_number)
+    inspire_url = ""
+    control_number = meta.get("control_number")
+    if isinstance(control_number, int):
+        inspire_url = f"https://inspirehep.net/literature/{control_number}"
+
     return {
         "title": title,
         "date": date_str,
         "year": dt.year if dt.year >= 1901 else 1900,
         "arxiv": arxiv_id,
         "authors": authors_str,
+        "doi": doi,
+        "inspire": inspire_url,
     }
 
 def dump_yaml_grouped(blocks) -> str:
-    # Very small YAML emitter (no PyYAML dependency)
     lines = []
     for year in sorted(blocks.keys(), reverse=True):
         papers = blocks[year]
         lines.append(f"- year: {year}")
         lines.append("  papers:")
         for p in papers:
-            # Always quote title/authors to be safe with punctuation
             title = p["title"].replace('"', '\\"')
             authors = p["authors"].replace('"', '\\"')
             date = p["date"].replace('"', '\\"')
@@ -110,7 +123,11 @@ def dump_yaml_grouped(blocks) -> str:
             lines.append(f'      date: "{date}"')
             lines.append(f'      arxiv: "{p["arxiv"]}"')
             lines.append(f'      authors: "{authors}"')
-        lines.append("")  # blank line between years
+            if p.get("doi"):
+                lines.append(f'      doi: "{p["doi"]}"')
+            if p.get("inspire"):
+                lines.append(f'      inspire: "{p["inspire"]}"')
+        lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
 def main() -> int:
@@ -140,7 +157,6 @@ def main() -> int:
             errors += 1
             print(f"[ERROR] {aid}: {e}", file=sys.stderr)
 
-    # Sort papers in each year by date desc (best-effort: parse day-month-year)
     def date_key(p):
         try:
             return datetime.strptime(p["date"], "%d %b %Y")
@@ -153,8 +169,6 @@ def main() -> int:
     OUT_YML.write_text(dump_yaml_grouped(blocks), encoding="utf-8")
 
     print(f"Wrote {OUT_YML} from {len(arxiv_ids)} arXiv IDs ({errors} errors).")
-    if errors:
-        print("Some records failed to fetch; check stderr.", file=sys.stderr)
     return 0 if errors == 0 else 1
 
 if __name__ == "__main__":
