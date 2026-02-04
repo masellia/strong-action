@@ -2,6 +2,8 @@
 layout: page
 title: About STRONG
 permalink: /about/
+nav: true
+nav_order: 2
 ---
 
 ## STRONG Action — short description

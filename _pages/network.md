@@ -2,6 +2,8 @@
 layout: page
 title: Network
 permalink: /network/
+nav: true
+nav_order: 3
 ---
 
 ## Nodes & partners
