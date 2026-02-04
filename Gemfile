@@ -43,3 +43,10 @@ end
 # Needed by _config.yml plugins
  gem 'jekyll-redirect-from'
 gem 'jekyll-remote-theme'
+
+# Plugins required by _config.yml / GitHub Pages build
+gem 'jekyll-seo-tag'
+gem 'jekyll-feed'
+gem 'jekyll-sitemap'
+gem 'jekyll-github-metadata'
+gem 'jemoji'
