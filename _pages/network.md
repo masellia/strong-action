@@ -25,32 +25,24 @@ nav_order: 3
   const dataUrl = "{{ site.baseurl }}/assets/data/nodes.geojson";
 
   fetch(dataUrl)
-    .then(r => {
-      if (!r.ok) throw new Error("Failed to load " + dataUrl + " (" + r.status + ")");
-      return r.json();
-    })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(geojson => {
       const layer = L.geoJSON(geojson, {
-        pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 7, weight: 2 }),
-        onEachFeature: (feature, l) => {
-          const p = feature.properties || {};
+        pointToLayer: (f, latlng) => L.circleMarker(latlng, { radius: 7, weight: 2 }),
+        onEachFeature: (f, l) => {
+          const p = f.properties || {};
           const title = `<strong>${p.name || "Node"}</strong>`;
-          const meta = [
-            p.role || null,
-            [p.city, p.country].filter(Boolean).join(", ") || null
-          ].filter(Boolean).join(" — ");
+          const meta = [p.role, [p.city, p.country].filter(Boolean).join(", ")].filter(Boolean).join(" — ");
           const link = p.url ? `<br><a href="${p.url}" target="_blank" rel="noopener">Website</a>` : "";
           l.bindPopup(`${title}${meta ? "<br>" + meta : ""}${link}`);
         }
       }).addTo(map);
-
       if (layer.getLayers().length > 1) map.fitBounds(layer.getBounds().pad(0.25));
     })
-    .catch(err => {
-      console.error(err);
+    .catch(() => {
       document.getElementById('strong-map').innerHTML =
         `<div style="padding:12px;border:1px solid #ddd;border-radius:12px;">
-          Could not load map data: <code>${dataUrl}</code>
+          Could not load <code>${dataUrl}</code>
         </div>`;
     });
 })();
