@@ -54,6 +54,12 @@ external_services:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
+navbar_pages:
+  - index.md
+  - _pages/about.md
+  - _pages/network.md
+  - _pages/contact.md
+
 footer_fixed: true
 search_enabled: true
 socials_in_search: true
