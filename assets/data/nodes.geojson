@@ -4,6 +4,22 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "GSSI (Gran Sasso Science Institute)",
+        "department": "Area of Mathematics / Physics",
+        "local_coordinator": "Andrea Maselli",
+        "role": "Coordinator",
+        "address": "Viale Francesco Crispi 7, 67100 L'Aquila",
+        "city": "L'Aquila",
+        "country": "Italy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.3995, 42.3506]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "University of Nottingham",
         "department": "School of Mathematical Sciences",
         "local_coordinator": "Laura Sberna",
@@ -40,7 +56,7 @@
         "department": "Department of Physics",
         "local_coordinator": "Paolo Pani",
         "role": "Beneficiary",
-        "address": "Piazzale Aldo Moro 2 (Physics Dept buildings inside the campus)",
+        "address": "Piazzale Aldo Moro 2",
         "city": "Rome",
         "country": "Italy"
       },
@@ -79,6 +95,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [2.227778, 48.81]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Johns Hopkins University",
+        "department": "Department of Physics and Astronomy",
+        "local_coordinator": "Emanuele Berti",
+        "role": "Partner",
+        "address": "Bloomberg Center, 3400 N. Charles St., Baltimore, MD 21218",
+        "city": "Baltimore",
+        "country": "United States"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.6205, 39.3299]
       }
     }
   ]
