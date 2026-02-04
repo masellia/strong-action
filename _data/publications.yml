@@ -1,5 +1,10 @@
 - year: 2025
   papers:
+    - title: "A multi-parameter expansion for the evolution of asymmetric binaries in astrophysical environments"
+      date: "06 Jul 2025"
+      arxiv: "2507.04471"
+      authors: "Datta, Sayak, Maselli, Andrea"
+      inspire: "https://inspirehep.net/literature/2942962"
     - title: "Extreme mass ratio inspirals in dark matter halos: Dynamics and distinguishability of halo models"
       date: "20 Mar 2025"
       arxiv: "2503.16649"
