@@ -1,45 +1,21 @@
 {
-  "type": "Feature",
-  "properties": {
-    "id": "gssi",
-    "name": "GSSI",
-    "institution": "Gran Sasso Science Institute",
-    "department": "",
-    "coordinator": "Andrea Maselli",
-    "city": "L'Aquila",
-    "country": "Italy",
-    "role": "coordinator"
-  },
-  "geometry": { "type": "Point", "coordinates": [13.39954, 42.34985] }
-},
+  "type": "FeatureCollection",
+  "features": [
     {
       "type": "Feature",
       "properties": {
-        "id": "unipi",
-        "name": "University of Pisa",
-        "institution": "University of Pisa",
-        "department": "Physics Department",
-        "coordinator": "Leonardo Gualtieri",
-        "city": "Pisa",
+        "id": "gssi",
+        "name": "GSSI",
+        "institution": "Gran Sasso Science Institute",
+        "department": "",
+        "coordinator": "Andrea Maselli",
+        "city": "L'Aquila",
         "country": "Italy",
-        "role": "beneficiary"
+        "role": "coordinator"
       },
-      "geometry": { "type": "Point", "coordinates": [10.40168, 43.72284] }
+      "geometry": { "type": "Point", "coordinates": [13.39954, 42.34985] }
     },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "sapienza",
-        "name": "Sapienza University of Rome",
-        "institution": "Sapienza University of Rome",
-        "department": "Physics Department",
-        "coordinator": "Paolo Pani",
-        "city": "Rome",
-        "country": "Italy",
-        "role": "beneficiary"
-      },
-      "geometry": { "type": "Point", "coordinates": [12.51133, 41.90327] }
-    },
+
     {
       "type": "Feature",
       "properties": {
@@ -49,7 +25,7 @@
         "department": "School of Mathematical Sciences",
         "coordinator": "Laura Sberna",
         "city": "Nottingham",
-        "country": "UK",
+        "country": "United Kingdom",
         "role": "beneficiary"
       },
       "geometry": { "type": "Point", "coordinates": [-1.19120, 52.94050] }
@@ -60,7 +36,7 @@
         "id": "nbi",
         "name": "Niels Bohr Institute",
         "institution": "University of Copenhagen",
-        "department": "",
+        "department": "Niels Bohr Institute",
         "coordinator": "Vitor Cardoso",
         "city": "Copenhagen",
         "country": "Denmark",
@@ -71,10 +47,38 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "sapienza",
+        "name": "Sapienza University of Rome",
+        "institution": "Sapienza University of Rome",
+        "department": "Department of Physics",
+        "coordinator": "Paolo Pani",
+        "city": "Rome",
+        "country": "Italy",
+        "role": "beneficiary"
+      },
+      "geometry": { "type": "Point", "coordinates": [12.51133, 41.90327] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "unipi",
+        "name": "University of Pisa",
+        "institution": "University of Pisa",
+        "department": "Department of Physics",
+        "coordinator": "Leonardo Gualtieri",
+        "city": "Pisa",
+        "country": "Italy",
+        "role": "beneficiary"
+      },
+      "geometry": { "type": "Point", "coordinates": [10.40168, 43.72284] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "lux",
-        "name": "LUX (CNRS / Observatoire de Paris)",
+        "name": "LUX (Observatoire de Paris / CNRS)",
         "institution": "Laboratoire d’étude de l’Univers et des phénomènes eXtrêmes (LUX)",
-        "department": "",
+        "department": "Meudon site",
         "coordinator": "Laura Bernard",
         "city": "Meudon",
         "country": "France",
@@ -88,11 +92,11 @@
       "properties": {
         "id": "jhu",
         "name": "Johns Hopkins University",
-        "institution": "Johns Hopkins University (JHU)",
-        "department": "Physics & Astronomy",
+        "institution": "Johns Hopkins University",
+        "department": "Department of Physics and Astronomy",
         "coordinator": "Emanuele Berti",
         "city": "Baltimore, MD",
-        "country": "USA",
+        "country": "United States",
         "role": "partner"
       },
       "geometry": { "type": "Point", "coordinates": [-76.62052, 39.32990] }
@@ -115,12 +119,12 @@
       "type": "Feature",
       "properties": {
         "id": "uiuc",
-        "name": "University of Illinois Urbana-Champaign",
-        "institution": "University of Illinois Urbana-Champaign",
-        "department": "Physics",
+        "name": "University of Illinois Urbana–Champaign",
+        "institution": "University of Illinois Urbana–Champaign",
+        "department": "Department of Physics",
         "coordinator": "Helvi Witek",
         "city": "Urbana–Champaign, IL",
-        "country": "USA",
+        "country": "United States",
         "role": "partner"
       },
       "geometry": { "type": "Point", "coordinates": [-88.22720, 40.11059] }
@@ -130,9 +134,9 @@
       "properties": {
         "id": "kyoto-yitp",
         "name": "Kyoto University / Yukawa Institute",
-        "institution": "Kyoto University & Yukawa Institute for Theoretical Physics",
-        "department": "Physics",
-        "coordinator": "Shinji Mukoyama",
+        "institution": "Kyoto University",
+        "department": "Yukawa Institute for Theoretical Physics / Physics",
+        "coordinator": "Shinji Mukohyama",
         "city": "Kyoto",
         "country": "Japan",
         "role": "partner"
@@ -143,7 +147,7 @@
       "type": "Feature",
       "properties": {
         "id": "icts",
-        "name": "ICTS (TIFR)",
+        "name": "ICTS-TIFR",
         "institution": "International Centre for Theoretical Sciences (ICTS-TIFR)",
         "department": "",
         "coordinator": "Parameswaran Ajith",
