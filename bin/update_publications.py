@@ -19,7 +19,7 @@ def fetch_json(url: str) -> dict:
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "strong-action-publications-updater/1.1"
+            "User-Agent": "strong-action-publications-updater/1.2"
         },
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
@@ -32,6 +32,42 @@ def normalize_arxiv_id(s: str) -> str:
     s = s.replace("http://arxiv.org/abs/", "")
     return s.strip()
 
+def _fmt_journal(pubinfo: dict) -> str:
+    """
+    Try to format INSPIRE publication_info entry as:
+    'JournalTitle Volume (Year) ArtID or PageStart-PageEnd'
+    """
+    if not isinstance(pubinfo, dict):
+        return ""
+
+    title = (pubinfo.get("journal_title") or pubinfo.get("journal") or "").strip()
+    volume = str(pubinfo.get("journal_volume") or pubinfo.get("volume") or "").strip()
+    year = str(pubinfo.get("year") or "").strip()
+
+    artid = str(pubinfo.get("artid") or pubinfo.get("article_id") or "").strip()
+    page_start = str(pubinfo.get("page_start") or "").strip()
+    page_end = str(pubinfo.get("page_end") or "").strip()
+
+    tail = ""
+    if artid:
+        tail = artid
+    elif page_start and page_end:
+        tail = f"{page_start}-{page_end}"
+    elif page_start:
+        tail = page_start
+
+    parts = []
+    if title:
+        parts.append(title)
+    if volume:
+        parts.append(volume)
+    if year:
+        parts.append(f"({year})")
+    if tail:
+        parts.append(tail)
+
+    return " ".join(parts).strip()
+
 def parse_inspire_record(arxiv_id: str) -> dict:
     data = fetch_json(INSPIRE_ARXIV_ENDPOINT.format(arxiv_id))
     meta = data.get("metadata", {}) or {}
@@ -43,7 +79,7 @@ def parse_inspire_record(arxiv_id: str) -> dict:
         title = (titles[0] or {}).get("title", "") or ""
     title = " ".join(title.split()).strip()
 
-    # Authors (full_name)
+    # Authors
     authors_list = meta.get("authors") or []
     authors = []
     for a in authors_list:
@@ -55,7 +91,7 @@ def parse_inspire_record(arxiv_id: str) -> dict:
             authors.append(name)
     authors_str = ", ".join(authors)
 
-    # Date (prefer preprint_date / published / earliest)
+    # Date
     date_iso = meta.get("preprint_date") or meta.get("date_published") or meta.get("earliest_date") or ""
     if not date_iso:
         imprints = meta.get("imprints") or []
@@ -71,7 +107,6 @@ def parse_inspire_record(arxiv_id: str) -> dict:
         except Exception:
             continue
 
-    # fallback: infer from new-style arXiv IDs YYMM.number
     if dt is None:
         m = re.match(r"^(\d{2})(\d{2})\.\d+", arxiv_id)
         if m:
@@ -85,19 +120,33 @@ def parse_inspire_record(arxiv_id: str) -> dict:
 
     date_str = f"{dt.day:02d} {MONTHS[dt.month-1]} {dt.year}" if dt.year >= 1901 else ""
 
-    # DOI (if present)
+    # DOI
     doi = ""
     dois = meta.get("dois") or []
-    if isinstance(dois, list) and len(dois) > 0:
+    if isinstance(dois, list) and dois:
         first = dois[0] or {}
         if isinstance(first, dict):
             doi = (first.get("value") or "").strip()
 
-    # INSPIRE literature page (use control_number)
+    # INSPIRE literature page
     inspire_url = ""
     control_number = meta.get("control_number")
     if isinstance(control_number, int):
         inspire_url = f"https://inspirehep.net/literature/{control_number}"
+
+    # Journal reference from publication_info (best-effort)
+    journal = ""
+    pubinfo_list = meta.get("publication_info") or []
+    if isinstance(pubinfo_list, list) and pubinfo_list:
+        # sometimes multiple entries; pick the first non-empty formatted one
+        for pi in pubinfo_list:
+            journal = _fmt_journal(pi)
+            if journal:
+                break
+    # fallback: pubinfo_freetext if present
+    if not journal:
+        ft = (meta.get("pubinfo_freetext") or "").strip()
+        journal = ft
 
     return {
         "title": title,
@@ -107,6 +156,7 @@ def parse_inspire_record(arxiv_id: str) -> dict:
         "authors": authors_str,
         "doi": doi,
         "inspire": inspire_url,
+        "journal": journal,
     }
 
 def dump_yaml_grouped(blocks) -> str:
@@ -116,17 +166,21 @@ def dump_yaml_grouped(blocks) -> str:
         lines.append(f"- year: {year}")
         lines.append("  papers:")
         for p in papers:
-            title = p["title"].replace('"', '\\"')
-            authors = p["authors"].replace('"', '\\"')
-            date = p["date"].replace('"', '\\"')
-            lines.append(f'    - title: "{title}"')
-            lines.append(f'      date: "{date}"')
-            lines.append(f'      arxiv: "{p["arxiv"]}"')
-            lines.append(f'      authors: "{authors}"')
+            def q(s: str) -> str:
+                return str(s).replace('"', '\\"')
+
+            lines.append(f'    - title: "{q(p.get("title",""))}"')
+            lines.append(f'      date: "{q(p.get("date",""))}"')
+            lines.append(f'      arxiv: "{q(p.get("arxiv",""))}"')
+            lines.append(f'      authors: "{q(p.get("authors",""))}"')
+
+            if p.get("journal"):
+                lines.append(f'      journal: "{q(p["journal"])}"')
             if p.get("doi"):
-                lines.append(f'      doi: "{p["doi"]}"')
+                lines.append(f'      doi: "{q(p["doi"])}"')
             if p.get("inspire"):
-                lines.append(f'      inspire: "{p["inspire"]}"')
+                lines.append(f'      inspire: "{q(p["inspire"])}"')
+
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
