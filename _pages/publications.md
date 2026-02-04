@@ -6,49 +6,37 @@ nav: true
 nav_order: 3
 ---
 
+<style>
+.pubs-year { margin-top: 1.2rem; }
+.pub-item { padding: 0.35rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.pub-title { font-size: 0.95rem; font-weight: 600; line-height: 1.2; margin: 0; }
+.pub-meta { font-size: 0.82rem; opacity: 0.75; margin-top: 0.15rem; }
+.pub-actions { margin-top: 0.35rem; }
+.pub-actions .btn { padding: 0.12rem 0.45rem; font-size: 0.78rem; line-height: 1.2; }
+</style>
+
 {% assign pubs = site.data.publications %}
 
 {% for block in pubs %}
-## {{ block.year }}
+<h2 class="pubs-year">{{ block.year }}</h2>
 
 {% for p in block.papers %}
-<div class="card p-3 mb-3" style="border-radius: 12px;">
-  <div class="row align-items-center">
-    {% if p.image %}
-    <div class="col-md-3 mb-2 mb-md-0">
-      <img src="{{ site.baseurl }}{{ p.image }}" alt="paper image" style="width:100%; border-radius: 10px;">
-    </div>
-    <div class="col-md-9">
-    {% else %}
-    <div class="col-12">
+<div class="pub-item">
+  <p class="pub-title">{{ p.title }}</p>
+
+  <div class="pub-meta">
+    {% if p.date %}{{ p.date }}{% endif %}
+    {% if p.authors %}{% if p.date %} · {% endif %}{{ p.authors }}{% endif %}
+  </div>
+
+  <div class="pub-actions">
+    {% if p.arxiv %}
+      <a class="btn btn-outline-primary" target="_blank" rel="noopener"
+         href="https://arxiv.org/abs/{{ p.arxiv }}">arXiv</a>
+
+      <a class="btn btn-success" target="_blank" rel="noopener"
+         href="https://inspirehep.net/api/arxiv/{{ p.arxiv }}?format=bibtex">BibTeX</a>
     {% endif %}
-
-      <div style="font-size: 1.05rem; font-weight: 600; line-height: 1.25;">
-        {{ p.title }}
-      </div>
-
-      {% if p.authors %}
-      <div class="text-muted" style="margin-top: 6px;">
-        {{ p.authors }}
-      </div>
-      {% endif %}
-
-      {% if p.date %}
-      <div class="text-muted" style="margin-top: 4px;">
-        {{ p.date }}
-      </div>
-      {% endif %}
-
-      <div style="margin-top: 10px;">
-        {% if p.arxiv %}
-        <a class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener"
-           href="https://arxiv.org/abs/{{ p.arxiv }}">
-          arXiv
-        </a>
-        {% endif %}
-      </div>
-
-    </div>
   </div>
 </div>
 {% endfor %}
