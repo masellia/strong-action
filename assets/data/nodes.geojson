@@ -4,46 +4,82 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "GSSI (Gran Sasso Science Institute)",
-        "role": "Beneficiary (Coordinator)",
-        "city": "L'Aquila",
-        "country": "Italy",
-        "url": "https://www.gssi.it/"
+        "name": "University of Nottingham",
+        "department": "School of Mathematical Sciences",
+        "local_coordinator": "Laura Sberna",
+        "role": "Beneficiary",
+        "address": "Mathematical Sciences Building, University Park, Nottingham NG7 2RD",
+        "city": "Nottingham",
+        "country": "United Kingdom"
       },
-      "geometry": { "type": "Point", "coordinates": [13.3995, 42.3506] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.191197, 52.940502]
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "University of Pisa",
+        "name": "University of Copenhagen",
+        "department": "Niels Bohr Institute",
+        "local_coordinator": "Vitor Cardoso",
         "role": "Beneficiary",
-        "city": "Pisa",
-        "country": "Italy",
-        "url": "https://www.unipi.it/"
+        "address": "Blegdamsvej 17–21, DK-2100 Copenhagen",
+        "city": "Copenhagen",
+        "country": "Denmark"
       },
-      "geometry": { "type": "Point", "coordinates": [10.3924, 43.7099] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.571333, 55.696747]
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "name": "Sapienza University of Rome",
+        "department": "Department of Physics",
+        "local_coordinator": "Paolo Pani",
         "role": "Beneficiary",
+        "address": "Piazzale Aldo Moro 2 (Physics Dept buildings inside the campus)",
         "city": "Rome",
-        "country": "Italy",
-        "url": "https://www.uniroma1.it/"
+        "country": "Italy"
       },
-      "geometry": { "type": "Point", "coordinates": [12.5095, 41.9020] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.5144, 41.9038]
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "CNRS (Centre national de la recherche scientifique)",
+        "name": "University of Pisa",
+        "department": "Department of Physics",
+        "local_coordinator": "Leonardo Gualtieri",
         "role": "Beneficiary",
-        "city": "Paris",
-        "country": "France",
-        "url": "https://www.cnrs.fr/"
+        "address": "Largo Bruno Pontecorvo 3, 56127 Pisa",
+        "city": "Pisa",
+        "country": "Italy"
       },
-      "geometry": { "type": "Point", "coordinates": [2.2641, 48.8477] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.406, 43.718788]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Observatoire de Paris – PSL",
+        "department": "LUX (Laboratoire d’étude de l’Univers et des phénomènes eXtrêmes), Meudon site",
+        "local_coordinator": "Laura Bernard",
+        "role": "Beneficiary",
+        "address": "5, place Jules Janssen, 92195 Meudon cedex",
+        "city": "Meudon",
+        "country": "France"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.227778, 48.81]
+      }
     }
   ]
 }
