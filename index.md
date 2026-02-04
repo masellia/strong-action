@@ -1,7 +1,9 @@
 ---
 layout: page
-title: STRONG Action
+title: Home
 permalink: /
+nav: true
+nav_order: 1
 ---
 
 Welcome to the STRONG Action website.

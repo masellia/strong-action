@@ -1,22 +1,19 @@
 {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "gssi",
-        "name": "GSSI",
-        "institution": "Gran Sasso Science Institute",
-        "department": "",
-        "coordinator": "",
-        "city": "L'Aquila",
-        "country": "Italy",
-        "role": "coordinator"
-      },
-      "geometry": { "type": "Point", "coordinates": [13.39954, 42.34985] }
-    },
-
-    {
+  "type": "Feature",
+  "properties": {
+    "id": "gssi",
+    "name": "GSSI",
+    "institution": "Gran Sasso Science Institute",
+    "department": "",
+    "coordinator": "Andrea Maselli",
+    "city": "L'Aquila",
+    "country": "Italy",
+    "role": "coordinator"
+  },
+  "geometry": { "type": "Point", "coordinates": [13.39954, 42.34985] }
+},
+ 
+   {
       "type": "Feature",
       "properties": {
         "id": "unipi",
