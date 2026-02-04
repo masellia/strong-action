@@ -8,6 +8,7 @@
         "department": "Area of Mathematics / Physics",
         "local_coordinator": "Andrea Maselli",
         "role": "Coordinator",
+        "url": "https://andreamaselli85.wixsite.com/home",
         "address": "Viale Francesco Crispi 7, 67100 L'Aquila",
         "city": "L'Aquila",
         "country": "Italy"
@@ -21,6 +22,7 @@
         "department": "School of Mathematical Sciences",
         "local_coordinator": "Laura Sberna",
         "role": "Beneficiary",
+        "url": "https://sites.google.com/view/laurasberna",
         "address": "University Park, Nottingham NG7 2RD",
         "city": "Nottingham",
         "country": "United Kingdom"
@@ -34,6 +36,7 @@
         "department": "Niels Bohr Institute",
         "local_coordinator": "Vitor Cardoso",
         "role": "Beneficiary",
+        "url": "https://vitorcardoso.strong-gr.com/",
         "address": "Blegdamsvej 17–21, DK-2100 Copenhagen",
         "city": "Copenhagen",
         "country": "Denmark"
@@ -47,6 +50,7 @@
         "department": "Department of Physics",
         "local_coordinator": "Paolo Pani",
         "role": "Beneficiary",
+        "url": "https://paolopani.weebly.com/",
         "address": "Piazzale Aldo Moro 2",
         "city": "Rome",
         "country": "Italy"
@@ -60,6 +64,7 @@
         "department": "Department of Physics",
         "local_coordinator": "Leonardo Gualtieri",
         "role": "Beneficiary",
+        "url": "https://sites.google.com/unipi.it/gualtieri",
         "address": "Largo Bruno Pontecorvo 3, 56127 Pisa",
         "city": "Pisa",
         "country": "Italy"
@@ -73,6 +78,7 @@
         "department": "LUX (Laboratoire d’étude de l’Univers et des phénomènes eXtrêmes)",
         "local_coordinator": "Laura Bernard",
         "role": "Beneficiary",
+        "url": "https://observatoiredeparis.psl.eu/laura-bernard-winner-of-sf2a.html",
         "address": "5 place Jules Janssen, 92195 Meudon cedex",
         "city": "Meudon",
         "country": "France"
@@ -83,10 +89,25 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Johns Hopkins University",
+        "department": "Department of Physics and Astronomy",
+        "local_coordinator": "Emanuele Berti",
+        "role": "Partner",
+        "url": "https://pages.jh.edu/eberti2/about/",
+        "address": "Bloomberg Center, 3400 N. Charles St., Baltimore, MD 21218",
+        "city": "Baltimore",
+        "country": "United States"
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.6205, 39.3299] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Perimeter Institute for Theoretical Physics",
         "department": "Physics",
         "local_coordinator": "Luis Lehner",
         "role": "Partner",
+        "url": "https://perimeterinstitute.ca/people/luis-lehner",
         "address": "31 Caroline St N, Waterloo, Ontario N2L 2Y5",
         "city": "Waterloo",
         "country": "Canada"
@@ -100,6 +121,7 @@
         "department": "Department of Physics",
         "local_coordinator": "Helvi Witek",
         "role": "Partner",
+        "url": "https://physics.illinois.edu/people/directory/profile/hwitek",
         "address": "1110 W Green St, Urbana, IL 61801",
         "city": "Urbana–Champaign",
         "country": "United States"
@@ -113,6 +135,7 @@
         "department": "Department of Physics / Yukawa Institute for Theoretical Physics",
         "local_coordinator": "Shinji Mukohyama",
         "role": "Partner",
+        "url": "https://www2.yukawa.kyoto-u.ac.jp/~shinji.mukohyama/",
         "address": "Kitashirakawa Oiwake-cho, Sakyo-ku, Kyoto 606-8502",
         "city": "Kyoto",
         "country": "Japan"
