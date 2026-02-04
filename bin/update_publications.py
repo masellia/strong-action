@@ -11,6 +11,7 @@ ARXIV_LIST = Path("_data/publications_arxiv.txt")
 OUT_YML = Path("_data/publications.yml")
 
 INSPIRE_ARXIV_ENDPOINT = "https://inspirehep.net/api/arxiv/{}"
+INSPIRE_ARXIV_BIBTEX = "https://inspirehep.net/api/arxiv/{}?format=bibtex"
 
 MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
@@ -19,11 +20,22 @@ def fetch_json(url: str) -> dict:
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "strong-action-publications-updater/1.2"
+            "User-Agent": "strong-action-publications-updater/1.3"
         },
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.loads(resp.read().decode("utf-8"))
+
+def fetch_text(url: str) -> str:
+    req = urllib.request.Request(
+        url,
+        headers={
+            "Accept": "text/plain",
+            "User-Agent": "strong-action-publications-updater/1.3"
+        },
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return resp.read().decode("utf-8")
 
 def normalize_arxiv_id(s: str) -> str:
     s = s.strip()
@@ -33,17 +45,11 @@ def normalize_arxiv_id(s: str) -> str:
     return s.strip()
 
 def _fmt_journal(pubinfo: dict) -> str:
-    """
-    Try to format INSPIRE publication_info entry as:
-    'JournalTitle Volume (Year) ArtID or PageStart-PageEnd'
-    """
     if not isinstance(pubinfo, dict):
         return ""
-
     title = (pubinfo.get("journal_title") or pubinfo.get("journal") or "").strip()
     volume = str(pubinfo.get("journal_volume") or pubinfo.get("volume") or "").strip()
     year = str(pubinfo.get("year") or "").strip()
-
     artid = str(pubinfo.get("artid") or pubinfo.get("article_id") or "").strip()
     page_start = str(pubinfo.get("page_start") or "").strip()
     page_end = str(pubinfo.get("page_end") or "").strip()
@@ -57,15 +63,10 @@ def _fmt_journal(pubinfo: dict) -> str:
         tail = page_start
 
     parts = []
-    if title:
-        parts.append(title)
-    if volume:
-        parts.append(volume)
-    if year:
-        parts.append(f"({year})")
-    if tail:
-        parts.append(tail)
-
+    if title: parts.append(title)
+    if volume: parts.append(volume)
+    if year: parts.append(f"({year})")
+    if tail: parts.append(tail)
     return " ".join(parts).strip()
 
 def parse_inspire_record(arxiv_id: str) -> dict:
@@ -75,7 +76,7 @@ def parse_inspire_record(arxiv_id: str) -> dict:
     # Title
     title = ""
     titles = meta.get("titles") or []
-    if titles and isinstance(titles, list):
+    if isinstance(titles, list) and titles:
         title = (titles[0] or {}).get("title", "") or ""
     title = " ".join(title.split()).strip()
 
@@ -95,7 +96,7 @@ def parse_inspire_record(arxiv_id: str) -> dict:
     date_iso = meta.get("preprint_date") or meta.get("date_published") or meta.get("earliest_date") or ""
     if not date_iso:
         imprints = meta.get("imprints") or []
-        if imprints and isinstance(imprints, list):
+        if isinstance(imprints, list) and imprints:
             date_iso = (imprints[0] or {}).get("date", "") or ""
     date_iso = str(date_iso)
 
@@ -134,19 +135,23 @@ def parse_inspire_record(arxiv_id: str) -> dict:
     if isinstance(control_number, int):
         inspire_url = f"https://inspirehep.net/literature/{control_number}"
 
-    # Journal reference from publication_info (best-effort)
+    # Journal
     journal = ""
     pubinfo_list = meta.get("publication_info") or []
     if isinstance(pubinfo_list, list) and pubinfo_list:
-        # sometimes multiple entries; pick the first non-empty formatted one
         for pi in pubinfo_list:
             journal = _fmt_journal(pi)
             if journal:
                 break
-    # fallback: pubinfo_freetext if present
     if not journal:
-        ft = (meta.get("pubinfo_freetext") or "").strip()
-        journal = ft
+        journal = (meta.get("pubinfo_freetext") or "").strip()
+
+    # BibTeX (fetch as text at build time, avoids browser CORS)
+    bibtex = ""
+    try:
+        bibtex = fetch_text(INSPIRE_ARXIV_BIBTEX.format(arxiv_id)).strip()
+    except Exception:
+        bibtex = ""
 
     return {
         "title": title,
@@ -154,10 +159,14 @@ def parse_inspire_record(arxiv_id: str) -> dict:
         "year": dt.year if dt.year >= 1901 else 1900,
         "arxiv": arxiv_id,
         "authors": authors_str,
+        "journal": journal,
         "doi": doi,
         "inspire": inspire_url,
-        "journal": journal,
+        "bibtex": bibtex,
     }
+
+def yaml_quote(s: str) -> str:
+    return str(s).replace('"', '\\"')
 
 def dump_yaml_grouped(blocks) -> str:
     lines = []
@@ -166,20 +175,24 @@ def dump_yaml_grouped(blocks) -> str:
         lines.append(f"- year: {year}")
         lines.append("  papers:")
         for p in papers:
-            def q(s: str) -> str:
-                return str(s).replace('"', '\\"')
-
-            lines.append(f'    - title: "{q(p.get("title",""))}"')
-            lines.append(f'      date: "{q(p.get("date",""))}"')
-            lines.append(f'      arxiv: "{q(p.get("arxiv",""))}"')
-            lines.append(f'      authors: "{q(p.get("authors",""))}"')
+            lines.append(f'    - title: "{yaml_quote(p.get("title",""))}"')
+            lines.append(f'      date: "{yaml_quote(p.get("date",""))}"')
+            lines.append(f'      arxiv: "{yaml_quote(p.get("arxiv",""))}"')
+            lines.append(f'      authors: "{yaml_quote(p.get("authors",""))}"')
 
             if p.get("journal"):
-                lines.append(f'      journal: "{q(p["journal"])}"')
+                lines.append(f'      journal: "{yaml_quote(p["journal"])}"')
             if p.get("doi"):
-                lines.append(f'      doi: "{q(p["doi"])}"')
+                lines.append(f'      doi: "{yaml_quote(p["doi"])}"')
             if p.get("inspire"):
-                lines.append(f'      inspire: "{q(p["inspire"])}"')
+                lines.append(f'      inspire: "{yaml_quote(p["inspire"])}"')
+
+            # Multiline BibTeX block (YAML literal). Only write if we actually got it.
+            bt = p.get("bibtex","").strip()
+            if bt:
+                lines.append("      bibtex: |")
+                for ln in bt.splitlines():
+                    lines.append("        " + ln)
 
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
@@ -221,7 +234,6 @@ def main() -> int:
         blocks[y].sort(key=date_key, reverse=True)
 
     OUT_YML.write_text(dump_yaml_grouped(blocks), encoding="utf-8")
-
     print(f"Wrote {OUT_YML} from {len(arxiv_ids)} arXiv IDs ({errors} errors).")
     return 0 if errors == 0 else 1
 

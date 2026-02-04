@@ -5,6 +5,16 @@
       arxiv: "2507.04471"
       authors: "Datta, Sayak, Maselli, Andrea"
       inspire: "https://inspirehep.net/literature/2942962"
+      bibtex: |
+        @article{Datta:2025ruh,
+            author = "Datta, Sayak and Maselli, Andrea",
+            title = "{A multi-parameter expansion for the evolution of asymmetric binaries in astrophysical environments}",
+            eprint = "2507.04471",
+            archivePrefix = "arXiv",
+            primaryClass = "gr-qc",
+            month = "7",
+            year = "2025"
+        }
     - title: "Extreme mass ratio inspirals in dark matter halos: Dynamics and distinguishability of halo models"
       date: "20 Mar 2025"
       arxiv: "2503.16649"
@@ -12,3 +22,17 @@
       journal: "Phys.Rev.D 112 (2025) 124050"
       doi: "10.1103/dw6c-14pt"
       inspire: "https://inspirehep.net/literature/2902820"
+      bibtex: |
+        @article{Gliorio:2025cbh,
+            author = "Gliorio, Sara and Berti, Emanuele and Maselli, Andrea and Speeney, Nicholas",
+            title = "{Extreme mass ratio inspirals in dark matter halos: Dynamics and distinguishability of halo models}",
+            eprint = "2503.16649",
+            archivePrefix = "arXiv",
+            primaryClass = "gr-qc",
+            doi = "10.1103/dw6c-14pt",
+            journal = "Phys. Rev. D",
+            volume = "112",
+            number = "12",
+            pages = "124050",
+            year = "2025"
+        }

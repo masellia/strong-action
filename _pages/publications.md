@@ -44,12 +44,14 @@ nav_order: 3
            href="{{ p.inspire }}">Record</a>
       {% endif %}
 
-      <button class="btn btn-sm btn-outline-success" type="button"
-              onclick="strongCopyBibtex('{{ p.arxiv }}', this)">
-        Copy BibTeX
-      </button>
-
-      <span class="pub-status" data-bibtex-status></span>
+      {% if p.bibtex %}
+        <button class="btn btn-sm btn-outline-success" type="button"
+                data-bibtex="{{ p.bibtex | escape }}"
+                onclick="strongCopyBibtexLocal(this)">
+          Copy BibTeX
+        </button>
+        <span class="pub-status" data-bibtex-status></span>
+      {% endif %}
     {% endif %}
   </div>
 </div>
@@ -58,23 +60,20 @@ nav_order: 3
 {% endfor %}
 
 <script>
-async function strongCopyBibtex(arxivId, btnEl) {
+async function strongCopyBibtexLocal(btnEl) {
   const statusEl = btnEl.parentElement.querySelector('[data-bibtex-status]');
-  const url = `https://inspirehep.net/api/arxiv/${arxivId}?format=bibtex`;
+  const bib = btnEl.getAttribute('data-bibtex') || '';
+  // unescape HTML entities that Liquid produced via |escape
+  const txt = new DOMParser().parseFromString(bib, "text/html").documentElement.textContent;
 
   try {
-    if (statusEl) statusEl.textContent = "Fetching…";
-    const r = await fetch(url, { headers: { "Accept": "text/plain" } });
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    const bib = await r.text();
-
-    await navigator.clipboard.writeText(bib);
+    if (statusEl) statusEl.textContent = "Copying…";
+    await navigator.clipboard.writeText(txt);
     if (statusEl) statusEl.textContent = "Copied!";
     setTimeout(() => { if (statusEl) statusEl.textContent = ""; }, 2000);
   } catch (e) {
-    if (statusEl) statusEl.textContent = "Copy failed (opening BibTeX)…";
-    window.open(url, "_blank", "noopener");
-    setTimeout(() => { if (statusEl) statusEl.textContent = ""; }, 2500);
+    if (statusEl) statusEl.textContent = "Copy failed";
+    setTimeout(() => { if (statusEl) statusEl.textContent = ""; }, 2000);
   }
 }
 </script>
