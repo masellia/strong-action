@@ -42,3 +42,4 @@ end
 
 # Needed by _config.yml plugins
  gem 'jekyll-redirect-from'
+gem 'jekyll-remote-theme'
