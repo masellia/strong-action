@@ -6,7 +6,26 @@ nav: true
 nav_order: 3
 ---
 
-<div style="text-align: justify;">
+<style>
+.network-text {
+  text-align: justify;
+}
+
+.network-text p {
+  margin-bottom: 0.9rem;
+}
+
+.network-text ul {
+  margin-left: 1.2rem;
+  margin-bottom: 0.9rem;
+}
+
+.network-text strong {
+  font-weight: 600;
+}
+</style>
+
+<div class="network-text">
 
 ## The STRONG Network
 
