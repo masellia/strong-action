@@ -6,26 +6,53 @@ nav: true
 nav_order: 3
 ---
 
+<style>
+  .strong-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .strong-person a {
+    text-decoration: underline !important;
+    font-weight: 600;
+  }
+  /* Force links to look like links even if theme overrides */
+  .strong-person a:link,
+  .strong-person a:visited {
+    color: #0d6efd !important;
+  }
+  .strong-node {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .strong-node-title { font-weight: 700; }
+  .strong-node-meta { color: #555; font-size: 0.9rem; margin-top: 2px; }
+</style>
+
 <div class="row">
   <div class="col-md-4">
     <div class="card p-3 mb-3">
       <h4 class="mb-2">STRONG Network</h4>
 
       <div class="mb-2">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#2e7d32;margin-right:6px;"></span>
-        Coordinator
+        <span class="strong-pill" style="background:#2e7d32;">Coordinator</span>
       </div>
       <div class="mb-2">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1565c0;margin-right:6px;"></span>
-        Beneficiary
+        <span class="strong-pill" style="background:#1565c0;">Beneficiary</span>
       </div>
       <div class="mb-2">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#c62828;margin-right:6px;"></span>
-        Partner
+        <span class="strong-pill" style="background:#c62828;">Partner</span>
       </div>
 
       <hr/>
-      <div id="node-list" style="font-size:0.9rem; max-height:60vh; overflow:auto;"></div>
+      <div id="node-list" style="max-height:60vh; overflow:auto;"></div>
     </div>
   </div>
 
@@ -62,18 +89,26 @@ nav_order: 3
       .replace(/"/g,"&quot;");
   }
 
+  // Accept multiple schemas (person/coordinator/local_coordinator + person_url/coordinator_url)
   function getPerson(p) {
     const name = p.person || p.coordinator || p.local_coordinator || "";
-    const url  = p.person_url || p.coordinator_url || p.website || p.url || "";
+    const url  = p.person_url || p.coordinator_url || p.local_coordinator_url || p.website || p.url || "";
     return { name, url };
   }
 
   function personHtml(person) {
     if (!person.name) return "";
     if (person.url) {
-      return "<a href='" + esc(person.url) + "' target='_blank' rel='noopener'>" + esc(person.name) + "</a>";
+      return "<span class='strong-person'>Local Coordinator: <a href='" + esc(person.url) +
+             "' target='_blank' rel='noopener'>" + esc(person.name) + "</a></span>";
     }
-    return esc(person.name);
+    return "<span class='strong-person'>Local Coordinator: " + esc(person.name) + "</span>";
+  }
+
+  function rolePillHtml(p) {
+    const color = roleColor(p.role);
+    const label = p.role_label || p.role || "";
+    return "<span class='strong-pill' style='background:" + esc(color) + ";'>" + esc(label) + "</span>";
   }
 
   fetch(geojsonUrl)
@@ -97,29 +132,37 @@ nav_order: 3
         }).addTo(map);
 
         // Popup
-        let popup = "<strong>" + esc(p.institution || "") + "</strong>";
+        let popup = "<div>";
+        popup += "<div style='margin-bottom:6px;'>" + rolePillHtml(p) + "</div>";
+        popup += "<strong>" + esc(p.institution || "") + "</strong>";
         if (p.department) popup += "<br/>" + esc(p.department);
 
         const ph = personHtml(person);
         if (ph) popup += "<br/>" + ph;
 
-        popup += "<br/>" + esc([p.city, p.country].filter(Boolean).join(", "));
-        popup += "<br/><em>" + esc(p.role_label || p.role || "") + "</em>";
+        const loc = [p.city, p.country].filter(Boolean).join(", ");
+        if (loc) popup += "<br/>" + esc(loc);
+        popup += "</div>";
 
         marker.bindPopup(popup);
         markers.push(marker);
 
         // Sidebar entry
         const div = document.createElement("div");
+        div.className = "strong-node";
         div.style.cursor = "pointer";
-        div.style.marginBottom = "10px";
 
-        const who = personHtml(person) || "<span style='opacity:0.7'>(no coordinator listed)</span>";
+        const loc2 = esc([p.city, p.country].filter(Boolean).join(", "));
+        const who = personHtml(person) || "<span class='strong-person' style='opacity:0.75'>Local Coordinator: (missing)</span>";
 
         div.innerHTML =
-          "<strong>" + esc(p.institution || "") + "</strong><br/>" +
-          who +
-          "<br/><span style='color:#555'>" + esc([p.city, p.country].filter(Boolean).join(", ")) + "</span>";
+          "<div style='margin-bottom:6px;'>" + rolePillHtml(p) + "</div>" +
+          "<div class='strong-node-title'>" + esc(p.institution || "") + "</div>" +
+          "<div class='strong-node-meta'>" +
+            (p.department ? (esc(p.department) + "<br/>") : "") +
+            who + "<br/>" +
+            "<span>" + loc2 + "</span>" +
+          "</div>";
 
         div.onclick = function () {
           map.setView([coords[1], coords[0]], 6);
