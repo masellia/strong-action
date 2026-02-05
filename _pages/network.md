@@ -5,8 +5,19 @@ permalink: /network/
 body_class: page-network
 nav: true
 nav_order: 3
-header: false
 ---
+
+<style>
+/* Hide the auto page title "Network" only on this page */
+body.page-network h1,
+body.page-network .post-title,
+body.page-network .page-title,
+body.page-network header.post-header,
+body.page-network .post-header {
+  display: none !important;
+}
+</style>
+
 
 <style>
 .network-text {
@@ -29,6 +40,8 @@ header: false
 
 
 ### The STRONG Network
+
+<br>
 
 The STRONG Action brings together a distributed network of research groups with complementary expertise in gravitational physics, compact objects, and strong-field tests of gravity.
 
