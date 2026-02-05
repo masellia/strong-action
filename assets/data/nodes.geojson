@@ -7,15 +7,21 @@
         "id": "gssi",
         "name": "GSSI",
         "institution": "Gran Sasso Science Institute",
-        "department": "",
+        "department": "Department of Physics",
         "coordinator": "Andrea Maselli",
         "city": "L'Aquila",
         "country": "Italy",
-        "role": "coordinator"
+        "role": "coordinator",
+        "person": "Andrea Maselli"
       },
-      "geometry": { "type": "Point", "coordinates": [13.39954, 42.34985] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.39954,
+          42.34985
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -26,9 +32,16 @@
         "coordinator": "Laura Sberna",
         "city": "Nottingham",
         "country": "United Kingdom",
-        "role": "beneficiary"
+        "role": "beneficiary",
+        "person": "Laura Sberna"
       },
-      "geometry": { "type": "Point", "coordinates": [-1.19120, 52.94050] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1912,
+          52.9405
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -40,9 +53,16 @@
         "coordinator": "Vitor Cardoso",
         "city": "Copenhagen",
         "country": "Denmark",
-        "role": "beneficiary"
+        "role": "beneficiary",
+        "person": "Vitor Cardoso"
       },
-      "geometry": { "type": "Point", "coordinates": [12.57158, 55.69695] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.57158,
+          55.69695
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -54,9 +74,16 @@
         "coordinator": "Paolo Pani",
         "city": "Rome",
         "country": "Italy",
-        "role": "beneficiary"
+        "role": "beneficiary",
+        "person": "Paolo Pani"
       },
-      "geometry": { "type": "Point", "coordinates": [12.51133, 41.90327] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.51133,
+          41.90327
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -68,9 +95,16 @@
         "coordinator": "Leonardo Gualtieri",
         "city": "Pisa",
         "country": "Italy",
-        "role": "beneficiary"
+        "role": "beneficiary",
+        "person": "Leonardo Gualtieri"
       },
-      "geometry": { "type": "Point", "coordinates": [10.40168, 43.72284] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.40168,
+          43.72284
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -82,11 +116,17 @@
         "coordinator": "Laura Bernard",
         "city": "Meudon",
         "country": "France",
-        "role": "beneficiary"
+        "role": "beneficiary",
+        "person": "Laura Bernard"
       },
-      "geometry": { "type": "Point", "coordinates": [2.22778, 48.81000] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.22778,
+          48.81
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -97,9 +137,16 @@
         "coordinator": "Emanuele Berti",
         "city": "Baltimore, MD",
         "country": "United States",
-        "role": "partner"
+        "role": "partner",
+        "person": "Emanuele Berti"
       },
-      "geometry": { "type": "Point", "coordinates": [-76.62052, 39.32990] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.62052,
+          39.3299
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -111,9 +158,16 @@
         "coordinator": "Luis Lehner",
         "city": "Waterloo, ON",
         "country": "Canada",
-        "role": "partner"
+        "role": "partner",
+        "person": "Luis Lehner"
       },
-      "geometry": { "type": "Point", "coordinates": [-80.52529, 43.46636] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.52529,
+          43.46636
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -125,9 +179,16 @@
         "coordinator": "Helvi Witek",
         "city": "Urbana–Champaign, IL",
         "country": "United States",
-        "role": "partner"
+        "role": "partner",
+        "person": "Helvi Witek"
       },
-      "geometry": { "type": "Point", "coordinates": [-88.22720, 40.11059] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.2272,
+          40.11059
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -139,9 +200,16 @@
         "coordinator": "Shinji Mukohyama",
         "city": "Kyoto",
         "country": "Japan",
-        "role": "partner"
+        "role": "partner",
+        "person": "Shinji Mukohyama"
       },
-      "geometry": { "type": "Point", "coordinates": [135.78095, 35.02722] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.78095,
+          35.02722
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -153,9 +221,16 @@
         "coordinator": "Parameswaran Ajith",
         "city": "Bengaluru",
         "country": "India",
-        "role": "partner"
+        "role": "partner",
+        "person": "Parameswaran Ajith"
       },
-      "geometry": { "type": "Point", "coordinates": [77.51439, 13.14490] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.51439,
+          13.1449
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -167,9 +242,16 @@
         "coordinator": "Sumanta Chakraborty",
         "city": "Kolkata",
         "country": "India",
-        "role": "partner"
+        "role": "partner",
+        "person": "Sumanta Chakraborty"
       },
-      "geometry": { "type": "Point", "coordinates": [88.37218, 22.50120] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.37218,
+          22.5012
+        ]
+      }
     }
   ]
 }
