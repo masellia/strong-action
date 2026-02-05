@@ -8,18 +8,18 @@ nav_order: 4
 
 ## Coordination
 
-**Andrea Maselli**  
-Gran Sasso Science Institute (GSSI)  
-L’Aquila, Italy  
+**Andrea Maselli** - Principal Investigator 
 
 - Website: <https://andreamaselli85.wixsite.com/home>
-- Email: *(add if you want)*
+- Email: andrea.maselli@gssi.it
+
+**Francesco della Rocca** Project Manager
 
 ---
 
-## Project Links
+## Usefull Links Related to the Project
 
-- STRONG Action website: https://masellia.github.io/strong-action/
+- STRONG EU Action website: https://masellia.github.io/strong-action/
 - GSSI: https://www.gssi.it/
 - European Commission (Horizon Europe): https://research-and-innovation.ec.europa.eu/
 
