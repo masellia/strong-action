@@ -62,6 +62,20 @@ nav_order: 3
       .replace(/"/g,"&quot;");
   }
 
+  function getPerson(p) {
+    const name = p.person || p.coordinator || p.local_coordinator || "";
+    const url  = p.person_url || p.coordinator_url || p.website || p.url || "";
+    return { name, url };
+  }
+
+  function personHtml(person) {
+    if (!person.name) return "";
+    if (person.url) {
+      return "<a href='" + esc(person.url) + "' target='_blank' rel='noopener'>" + esc(person.name) + "</a>";
+    }
+    return esc(person.name);
+  }
+
   fetch(geojsonUrl)
     .then(r => r.json())
     .then(fc => {
@@ -72,6 +86,7 @@ nav_order: 3
         const p = f.properties || {};
         const coords = f.geometry.coordinates;
         const color = roleColor(p.role);
+        const person = getPerson(p);
 
         const marker = L.circleMarker([coords[1], coords[0]], {
           radius: p.role === "coordinator" ? 9 : 7,
@@ -81,19 +96,15 @@ nav_order: 3
           fillOpacity: 0.85
         }).addTo(map);
 
+        // Popup
         let popup = "<strong>" + esc(p.institution || "") + "</strong>";
         if (p.department) popup += "<br/>" + esc(p.department);
 
-        if (p.person) {
-          if (p.person_url) {
-            popup += "<br/><a href='" + esc(p.person_url) + "' target='_blank' rel='noopener'>" + esc(p.person) + "</a>";
-          } else {
-            popup += "<br/>" + esc(p.person);
-          }
-        }
+        const ph = personHtml(person);
+        if (ph) popup += "<br/>" + ph;
 
         popup += "<br/>" + esc([p.city, p.country].filter(Boolean).join(", "));
-        popup += "<br/><em>" + esc(p.role_label || p.role) + "</em>";
+        popup += "<br/><em>" + esc(p.role_label || p.role || "") + "</em>";
 
         marker.bindPopup(popup);
         markers.push(marker);
@@ -101,13 +112,13 @@ nav_order: 3
         // Sidebar entry
         const div = document.createElement("div");
         div.style.cursor = "pointer";
-        div.style.marginBottom = "8px";
+        div.style.marginBottom = "10px";
+
+        const who = personHtml(person) || "<span style='opacity:0.7'>(no coordinator listed)</span>";
+
         div.innerHTML =
           "<strong>" + esc(p.institution || "") + "</strong><br/>" +
-          (p.person_url
-            ? "<a href='" + esc(p.person_url) + "' target='_blank' rel='noopener'>" + esc(p.person || "") + "</a>"
-            : esc(p.person || "")
-          ) +
+          who +
           "<br/><span style='color:#555'>" + esc([p.city, p.country].filter(Boolean).join(", ")) + "</span>";
 
         div.onclick = function () {
