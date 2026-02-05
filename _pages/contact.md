@@ -13,15 +13,16 @@ nav_order: 4
 - Website: <https://andreamaselli85.wixsite.com/home>
 - Email: andrea.maselli@gssi.it
 
-**Francesco della Rocca** Project Manager
+**Francesco della Rocca** - Project Manager
+**Merixtell Corbera** - Project Manager
 
 ---
 
 ## Usefull Links Related to the Project
 
 - STRONG EU Action website: <https://masellia.github.io/strong-action/>
-- GSSI: <https://www.gssi.it/>
 - Marie Skłodowska-Curie Actions - Staff Exchange: <https://marie-sklodowska-curie-actions.ec.europa.eu/actions/staff-exchanges>
+- GSSI: <https://www.gssi.it/>
 
 ---
 
