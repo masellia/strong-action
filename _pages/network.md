@@ -8,35 +8,14 @@ nav_order: 3
 ---
 
 <style>
-/* Hide the auto page title "Network" only on this page */
-body.page-network h1,
-body.page-network .post-title,
-body.page-network .page-title,
-body.page-network header.post-header,
-body.page-network .post-header {
-  display: none !important;
-}
-</style>
-
-
-<style>
 .network-text {
   text-align: justify;
-}
-
-.network-text p {
-  margin-bottom: 0.9rem;
-}
-
-.network-text ul {
-  margin-left: 1.2rem;
-  margin-bottom: 0.9rem;
-}
-
-.network-text strong {
-  font-weight: 600;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 </style>
+
+<div class="network-text" markdown="1">
 
 The **STRONG network** brings together a distributed network of research groups with complementary expertise in gravitational physics, compact objects, and strong-field tests of gravity.
 
@@ -51,6 +30,7 @@ The network is organised around:
 
 Use the interactive map and sidebar below to explore the individual nodes and local coordinators.
 
+</div>
 
 <style>
   .strong-pill {
