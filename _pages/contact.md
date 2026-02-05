@@ -10,7 +10,7 @@ nav_order: 4
 
 **Andrea Maselli** - Principal Investigator 
 
-- Website: <https://andreamaselli85.wixsite.com/home>
+- Website: [link](https://andreamaselli85.wixsite.com/home)
 - Email: andrea.maselli@gssi.it
 
 **Francesco della Rocca** - Project Manager
@@ -20,9 +20,9 @@ nav_order: 4
 
 ## Usefull Links Related to the Project
 
-- STRONG EU Action website: <https://masellia.github.io/strong-action/>
-- Marie Skłodowska-Curie Actions - Staff Exchange: <https://marie-sklodowska-curie-actions.ec.europa.eu/actions/staff-exchanges>
-- GSSI: <https://www.gssi.it/>
+- STRONG EU Action website: [link](https://masellia.github.io/strong-action/)
+- Marie Skłodowska-Curie Actions - Staff Exchange: [link](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/staff-exchanges)
+- GSSI: [link](https://www.gssi.it/)
 
 ---
 
