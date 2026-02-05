@@ -6,7 +6,7 @@ nav: true
 nav_order: 4
 ---
 
-## Coordination
+# Coordination
 
 **Andrea Maselli** - Principal Investigator 
 
@@ -19,7 +19,7 @@ nav_order: 4
 
 ---
 
-## Usefull Links Related to the Project
+# Usefull Links Related to the Project
 
 - STRONG EU Action website: [link](https://masellia.github.io/strong-action/)
 - Marie Skłodowska-Curie Actions - Staff Exchange: [link](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/staff-exchanges)
@@ -27,7 +27,7 @@ nav_order: 4
 
 ---
 
-## Network Contacts
+# Network Contacts
 
 Local coordinators for each node are listed on the **Network** page and can be contacted through their institutional webpages.
 
