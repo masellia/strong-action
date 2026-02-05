@@ -3,6 +3,7 @@ layout: page
 title: Network
 permalink: /network/
 nav: true
+nav_order: 3
 ---
 
 <div class="row">
@@ -11,46 +12,36 @@ nav: true
       <h4 class="mb-2">STRONG Network</h4>
 
       <div class="mb-2">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#2ca02c;margin-right:6px;"></span>
+        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#2e7d32;margin-right:6px;"></span>
         Coordinator
       </div>
       <div class="mb-2">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1f77b4;margin-right:6px;"></span>
+        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#1565c0;margin-right:6px;"></span>
         Beneficiary
       </div>
       <div class="mb-2">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#d62728;margin-right:6px;"></span>
+        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#c62828;margin-right:6px;"></span>
         Partner
       </div>
 
       <hr/>
-
-      <div class="small text-muted mb-2">Click a node on the map to see details.</div>
-      <div id="node-list" class="small" style="max-height:55vh; overflow:auto;"></div>
+      <div id="node-list" style="font-size:0.9rem; max-height:60vh; overflow:auto;"></div>
     </div>
   </div>
 
   <div class="col-md-8">
-    <div id="strong-map" style="height: 70vh; border-radius: 12px; overflow: hidden;"></div>
+    <div id="strong-map" style="height: 70vh; border-radius: 12px;"></div>
   </div>
 </div>
 
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<style>
-  /* keep controls minimal and clean */
-  .leaflet-control-attribution { font-size: 10px; }
-</style>
 
 <script>
 (function () {
   const geojsonUrl = "{{ site.baseurl }}/assets/data/nodes.geojson";
 
-  const map = L.map("strong-map", { scrollWheelZoom: false }).setView([35, 5], 2);
+  const map = L.map("strong-map", { scrollWheelZoom: false }).setView([30, 10], 2);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
@@ -58,65 +49,73 @@ nav: true
   }).addTo(map);
 
   function roleColor(role) {
-    if (role === "coordinator") return "#2ca02c"; // green
-    if (role === "partner") return "#d62728";     // red
-    return "#1f77b4";                              // beneficiary (default blue)
+    if (role === "coordinator") return "#2e7d32";
+    if (role === "partner") return "#c62828";
+    return "#1565c0";
   }
 
-  function formatPopup(p) {
-    const lines = [];
-    lines.push(`<strong>${p.name || p.institution || "Node"}</strong>`);
-    if (p.institution && p.institution !== p.name) lines.push(p.institution);
-    if (p.department) lines.push(p.department);
-    if (p.coordinator) lines.push(`<em>Local coordinator:</em> ${p.coordinator}`);
-    const place = [p.city, p.country].filter(Boolean).join(", ");
-    if (place) lines.push(place);
-    if (p.role) lines.push(`<span class="badge badge-secondary">${p.role}</span>`);
-    return `<div style="line-height:1.35">${lines.join("<br/>")}</div>`;
+  function esc(s) {
+    return String(s || "")
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;");
   }
 
   fetch(geojsonUrl)
     .then(r => r.json())
     .then(fc => {
       const listEl = document.getElementById("node-list");
-      listEl.innerHTML = "";
-
       const markers = [];
 
       fc.features.forEach(f => {
         const p = f.properties || {};
-        const coords = f.geometry && f.geometry.coordinates;
-        if (!coords || coords.length < 2) return;
-
-        const lon = coords[0], lat = coords[1];
+        const coords = f.geometry.coordinates;
         const color = roleColor(p.role);
 
-        const marker = L.circleMarker([lat, lon], {
-          radius: 7,
+        const marker = L.circleMarker([coords[1], coords[0]], {
+          radius: p.role === "coordinator" ? 9 : 7,
           weight: 2,
           color: color,
           fillColor: color,
           fillOpacity: 0.85
         }).addTo(map);
 
-        marker.bindPopup(formatPopup(p));
+        let popup = "<strong>" + esc(p.institution || "") + "</strong>";
+        if (p.department) popup += "<br/>" + esc(p.department);
+
+        if (p.person) {
+          if (p.person_url) {
+            popup += "<br/><a href='" + esc(p.person_url) + "' target='_blank' rel='noopener'>" + esc(p.person) + "</a>";
+          } else {
+            popup += "<br/>" + esc(p.person);
+          }
+        }
+
+        popup += "<br/>" + esc([p.city, p.country].filter(Boolean).join(", "));
+        popup += "<br/><em>" + esc(p.role_label || p.role) + "</em>";
+
+        marker.bindPopup(popup);
         markers.push(marker);
 
-        const item = document.createElement("div");
-        item.style.cursor = "pointer";
-        item.style.padding = "6px 0";
-        item.innerHTML = `
-          <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${color};margin-right:6px;"></span>
-          <strong>${p.name || p.institution || "Node"}</strong>
-          <div class="text-muted" style="margin-left:16px;">
-            ${(p.city || "")}${p.city && p.country ? ", " : ""}${(p.country || "")}
-          </div>
-        `;
-        item.addEventListener("click", () => {
-          map.setView([lat, lon], 6);
+        // Sidebar entry
+        const div = document.createElement("div");
+        div.style.cursor = "pointer";
+        div.style.marginBottom = "8px";
+        div.innerHTML =
+          "<strong>" + esc(p.institution || "") + "</strong><br/>" +
+          (p.person_url
+            ? "<a href='" + esc(p.person_url) + "' target='_blank' rel='noopener'>" + esc(p.person || "") + "</a>"
+            : esc(p.person || "")
+          ) +
+          "<br/><span style='color:#555'>" + esc([p.city, p.country].filter(Boolean).join(", ")) + "</span>";
+
+        div.onclick = function () {
+          map.setView([coords[1], coords[0]], 6);
           marker.openPopup();
-        });
-        listEl.appendChild(item);
+        };
+
+        listEl.appendChild(div);
       });
 
       if (markers.length) {
@@ -125,7 +124,7 @@ nav: true
       }
     })
     .catch(err => {
-      console.error("Failed to load nodes.geojson", err);
+      console.error(err);
       document.getElementById("node-list").innerHTML =
         "<div class='text-danger'>Failed to load network data.</div>";
     });
