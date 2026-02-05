@@ -2,6 +2,7 @@
 layout: page
 title: Publications
 permalink: /publications/
+body_class: page-network
 nav: true
 nav_order: 3
 ---
