@@ -14,9 +14,14 @@
         "city": "L'Aquila",
         "country": "Italy"
       },
-      "geometry": { "type": "Point", "coordinates": [13.398, 42.351] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.398,
+          42.351
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -30,9 +35,14 @@
         "city": "Nottingham",
         "country": "United Kingdom"
       },
-      "geometry": { "type": "Point", "coordinates": [-1.151, 52.954] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.151,
+          52.954
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -46,9 +56,14 @@
         "city": "Copenhagen",
         "country": "Denmark"
       },
-      "geometry": { "type": "Point", "coordinates": [12.568, 55.676] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.568,
+          55.676
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -62,9 +77,14 @@
         "city": "Rome",
         "country": "Italy"
       },
-      "geometry": { "type": "Point", "coordinates": [12.496, 41.902] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.496,
+          41.902
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -78,9 +98,14 @@
         "city": "Pisa",
         "country": "Italy"
       },
-      "geometry": { "type": "Point", "coordinates": [10.401, 43.723] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.401,
+          43.723
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -90,13 +115,17 @@
         "institution": "Laboratoire d’étude de l’Univers et des phénomènes eXtrêmes (LUX)",
         "department": "Observatoire de Paris / CNRS / Sorbonne Université",
         "person": "Laure Bernard",
-        "person_url": "https://www.laurebernard.com/",
         "city": "Meudon",
         "country": "France"
       },
-      "geometry": { "type": "Point", "coordinates": [2.229, 48.810] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.229,
+          48.81
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -110,9 +139,14 @@
         "city": "Baltimore, MD",
         "country": "USA"
       },
-      "geometry": { "type": "Point", "coordinates": [-76.612, 39.290] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.612,
+          39.29
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -126,9 +160,14 @@
         "city": "Waterloo, ON",
         "country": "Canada"
       },
-      "geometry": { "type": "Point", "coordinates": [-80.520, 43.464] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.52,
+          43.464
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -138,13 +177,18 @@
         "institution": "University of Illinois Urbana–Champaign",
         "department": "Department of Physics",
         "person": "Helvi Witek",
-        "person_url": "https://physics.illinois.edu/people/directory/profile/hwitek",
+        "person_url": "https://witek-gravity-group.physics.illinois.edu/",
         "city": "Urbana-Champaign, IL",
         "country": "USA"
       },
-      "geometry": { "type": "Point", "coordinates": [-88.207, 40.110] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.207,
+          40.11
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -158,9 +202,14 @@
         "city": "Kyoto",
         "country": "Japan"
       },
-      "geometry": { "type": "Point", "coordinates": [135.768, 35.011] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.768,
+          35.011
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -170,13 +219,18 @@
         "institution": "International Centre for Theoretical Sciences (ICTS-TIFR)",
         "department": "Physics",
         "person": "Parameswaran Ajith",
-        "person_url": "https://www.icts.res.in/people/parameswaran-ajith",
+        "person_url": "https://home.icts.res.in/~ajith/Home.html",
         "city": "Bengaluru",
         "country": "India"
       },
-      "geometry": { "type": "Point", "coordinates": [77.594, 12.972] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.594,
+          12.972
+        ]
+      }
     },
-
     {
       "type": "Feature",
       "properties": {
@@ -190,7 +244,13 @@
         "city": "Kolkata",
         "country": "India"
       },
-      "geometry": { "type": "Point", "coordinates": [88.363, 22.573] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.363,
+          22.573
+        ]
+      }
     }
   ]
 }

@@ -137,8 +137,7 @@ nav_order: 3
         popup += "<strong>" + esc(p.institution || "") + "</strong>";
         if (p.department) popup += "<br/>" + esc(p.department);
 
-        const ph = personHtml(person);
-        if (ph) popup += "<br/>" + ph;
+        if (person.name) popup += "<br/><span class='strong-person'>Local Coordinator: " + esc(person.name) + "</span>";
 
         const loc = [p.city, p.country].filter(Boolean).join(", ");
         if (loc) popup += "<br/>" + esc(loc);
