@@ -1,7 +1,6 @@
 ---
 layout: page
-title: the STRONG Network 
-nav_title: Network
+title: Network 
 permalink: /network/
 body_class: page-network
 nav: true
@@ -39,12 +38,7 @@ body.page-network .post-header {
 }
 </style>
 
-
-### The STRONG Network
-
-<br>
-
-The STRONG Action brings together a distributed network of research groups with complementary expertise in gravitational physics, compact objects, and strong-field tests of gravity.
+The **STRONG network** brings together a distributed network of research groups with complementary expertise in gravitational physics, compact objects, and strong-field tests of gravity.
 
 A central element of the network is the **secondment programme**, which allows senior researchers 
 as well as early-career researchers (PhD students and postdoctoral fellows) from European 
