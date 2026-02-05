@@ -6,6 +6,15 @@ nav: true
 nav_order: 3
 ---
 
+Here you can find research publications produced by members of STRONG within the 
+project action.
+
+Each entry links to the corresponding **arXiv preprint**, and—once available—to the 
+**journal publication** via its DOI. 
+For convenience, a **BibTeX citation** can be copied directly for use in articles, 
+reports, and presentations.
+
+
 <style>
 .pubs-year { margin-top: 1.2rem; }
 .pub-item { padding: 0.45rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
