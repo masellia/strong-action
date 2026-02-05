@@ -13,7 +13,7 @@ nav_order: 3
 .pub-authors { font-size: 0.82rem; opacity: 0.8; margin-top: 0.15rem; }
 .pub-journal { font-size: 0.82rem; font-style: italic; opacity: 0.75; margin-top: 0.1rem; }
 .pub-actions { margin-top: 0.35rem; display: flex; gap: 0.35rem; flex-wrap: wrap; align-items: center; }
-.pub-actions .btn { padding: 0.12rem 0.45rem; font-size: 0.78rem; line-height: 1.2; }
+.pub-actions .btn { padding: 0.12rem 0.45rem; font-size: 0.78rem; line-height: 1.2; box-shadow: none !important; }
 .pub-status { font-size: 0.78rem; opacity: 0.75; margin-left: 0.15rem; }
 </style>
 
