@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Network 
+title: the STRONG Network 
+nav_title: Network
 permalink: /network/
 body_class: page-network
 nav: true
