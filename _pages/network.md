@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Network
+title: 
 permalink: /network/
 body_class: page-network
 nav: true
@@ -39,9 +39,6 @@ These secondments are designed to promote the transfer of knowledge, methodologi
 The network is organised around:
 - **Beneficiaries**, which form the core of the consortium and host the main research activities;
 - **Partners**, including leading research centres outside Europe, which provide specialised expertise and an international research environment.
-#- A **central coordination node**, responsible for ensuring scientific coherence and effective implementation of the Action.
-
-#Through its global structure, the STRONG network fosters long-term collaborations, enhances the training of early-career researchers, and strengthens the international dimension of European research in gravitational physics.
 
 Use the interactive map and sidebar below to explore the individual nodes and local coordinators.
 
