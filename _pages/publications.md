@@ -6,6 +6,16 @@ nav: true
 nav_order: 3
 ---
 
+<style>
+.network-text {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+</style>
+
+<div class="network-text" markdown="1">
+
 Here you can find research publications produced by members of STRONG within the 
 project action.
 
@@ -14,6 +24,7 @@ Each entry links to the corresponding **arXiv preprint**, and — once available
 For convenience, a **BibTeX citation** can be copied directly for use in articles, 
 reports, and presentations.
 
+</div>
 
 <style>
 .pubs-year { margin-top: 1.2rem; }
