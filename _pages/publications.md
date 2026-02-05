@@ -9,7 +9,7 @@ nav_order: 3
 Here you can find research publications produced by members of STRONG within the 
 project action.
 
-Each entry links to the corresponding **arXiv preprint**, and—once available—to the 
+Each entry links to the corresponding **arXiv preprint**, and — once available — to the 
 **journal publication** via its DOI. 
 For convenience, a **BibTeX citation** can be copied directly for use in articles, 
 reports, and presentations.
