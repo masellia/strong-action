@@ -25,7 +25,6 @@ nav_order: 3
 }
 </style>
 
-<div class="network-text">
 
 ## The STRONG Network
 
@@ -45,7 +44,6 @@ The network is organised around:
 
 Use the interactive map and sidebar below to explore the individual nodes and local coordinators.
 
-</div>
 
 <style>
   .strong-pill {
