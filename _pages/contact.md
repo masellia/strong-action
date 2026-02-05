@@ -14,6 +14,7 @@ nav_order: 4
 - Email: andrea.maselli@gssi.it
 
 **Francesco della Rocca** - Project Manager
+
 **Merixtell Corbera** - Project Manager
 
 ---
