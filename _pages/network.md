@@ -6,6 +6,21 @@ nav: true
 nav_order: 3
 ---
 
+## The STRONG Network
+
+The STRONG Action brings together a distributed network of research groups with complementary expertise in gravitational physics, compact objects, and strong-field tests of gravity.
+
+A central element of the network is the **secondment programme**, which enables **senior researchers as well as early-career researchers (PhD students and postdoctoral fellows)** from European beneficiary institutions to undertake research visits at partner nodes abroad. These secondments are designed to promote the transfer of knowledge, methodologies, and technical skills across institutions and geographical regions.
+
+The network is organised around:
+- **Beneficiaries**, which form the core of the consortium and host the main research activities;
+- **Partners**, including leading research centres outside Europe, which provide specialised expertise and an international research environment;
+- A **central coordination node**, responsible for ensuring scientific coherence and effective implementation of the Action.
+
+Through its global structure, the STRONG network fosters long-term collaborations, enhances the training of early-career researchers, and strengthens the international dimension of European research in gravitational physics.
+
+Use the interactive map and sidebar below to explore the individual nodes and local coordinators.
+
 <style>
   .strong-pill {
     display: inline-flex;
