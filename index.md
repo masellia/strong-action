@@ -7,11 +7,11 @@ nav: false
 nav_order: 1
 ---
 
-<div style="width:100vw; margin-left:calc(0vw + 50%);">
+<p align="center">
   <img src="/strong-action/assets/img/luminet_bh_1979.jpg"
        alt="First numerical simulation of a black hole appearance"
-       style="width:50%; max-height:30vh; object-fit:cover;">
-</div>
+       style="max-width:900px; width:100%; max-height:30vh; object-fit:cover;">
+</p>
 
 <p style="font-size:0.75rem; color:#666; margin-top:4px;">
   Image credit: J.-P. Luminet, “Image of a spherical black hole with thin accretion disk,” <em>Astronomy & Astrophysics</em> 75:228 (1979) — CC BY-SA 4.0.
