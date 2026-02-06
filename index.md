@@ -19,8 +19,6 @@ nav_order: 1
 
 ### Strong Gravity at the Frontiers of Fundamental Physics
 
-<brg>
-
 **STRONG** is a Marie Skłodowska-Curie Staff Exchange Action dedicated to understanding gravity in its most extreme manifestations, where compact objects, high-energy phenomena, and fundamental fields intersect.
 
 The direct detection of gravitational waves has transformed our ability to observe the Universe, turning black holes and neutron stars into precision laboratories for testing gravity under conditions that cannot be reproduced on Earth. As future ground- and space-based detectors come online, the scientific challenge is no longer detection alone, but the accurate interpretation of increasingly complex signals.
