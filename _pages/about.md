@@ -114,12 +114,14 @@ Click on each work package below to explore its scientific scope.Click on each w
 
     <div id="wp4" class="collapse" aria-labelledby="wp4-heading" data-parent="#wpAccordion">
       <div class="card-body">
-        WP4 integrates the waveform models developed in WPs 1–3 into advanced data-analysis pipelines for gravitational-wave observations.
-        The work package extends existing inference frameworks with new algorithms for parameter estimation and model selection, tailored to both comparable-mass and asymmetric systems.
-
-        For comparable-mass binaries, WP4 builds on the Bilby framework, while dedicated inference tools based on FEW are developed for asymmetric binaries.
-        Analyses are performed using simulated data from next-generation space- and ground-based detectors, supported by astrophysically motivated source catalogues.
-        All tools are released to the community to maximise scientific impact and enable direct application to LVK data.
+        WP4 integrates the waveform models developed in WPs 1–3 into advanced data-analysis 
+        pipelines for gravitational-wave observations. The work package extends existing 
+        inference frameworks with new algorithms for parameter estimation and model selection, 
+        tailored to both comparable-mass and asymmetric systems. Analyses are conducted 
+        using simulated data from next-generation space- and ground-based detectors, 
+        supported by astrophysically motivated source catalogues. All tools are released 
+        to the community to maximise scientific impact and enable direct application to current 
+        data by LIGO/Virgo/KAGRA detectors.
       </div>
     </div>
   </div>
