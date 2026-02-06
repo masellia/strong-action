@@ -1,10 +1,21 @@
 ---
 layout: page
 title: Home
+body_class: page-network
 permalink: /
 nav: false
 nav_order: 1
 ---
+
+<style>
+.network-text {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+</style>
+
+<div class="network-text" markdown="1">
 
 ### Strong Gravity at the Frontiers of Fundamental Physics
 
@@ -15,3 +26,5 @@ The direct detection of gravitational waves has transformed our ability to obser
 STRONG addresses this challenge by advancing theoretical and computational tools for modelling compact objects and their gravitational-wave emission, with the aim of probing strong-field gravity, characterising astrophysical environments, and exploring possible extensions of General Relativity.
 
 By bringing together expertise across gravitational physics, astrophysics, and high-energy theory, STRONG contributes to the scientific foundations required for the next generation of gravitational-wave observations and to the training of researchers working at the interface of these disciplines.
+
+</div>

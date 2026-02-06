@@ -2,11 +2,20 @@
 layout: page
 title: About
 permalink: /about/
+body_class: page-network
 nav: true
 nav_order: 2
 ---
 
-### About STRONG
+<style>
+.network-text {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+</style>
+
+<div class="network-text" markdown="1">
 
 STRONG (Strong Gravity Crossroads: fundamental fields in the High-Energy Universe) is a Marie Skłodowska-Curie Action funded under the Staff Exchanges scheme. The project is motivated by the rapid progress of gravitational-wave astronomy and by the need for robust theoretical frameworks capable of interpreting future observations in the strong-field regime of gravity.
 
@@ -19,3 +28,5 @@ To address these goals, STRONG develops and connects a range of complementary ap
 - and data-analysis strategies for current and next-generation gravitational-wave detectors.
 
 Through this integrated scientific effort, STRONG aims to deliver new theoretical insights, validated modelling tools, and a coherent research framework that will support the long-term scientific exploitation of gravitational-wave observations.
+
+</div>
