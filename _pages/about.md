@@ -26,8 +26,6 @@ nav_order: 2
 
 <div class="network-text" markdown="1">
 
-### About STRONG
-
 The scientific programme of **STRONG** is structured into four tightly connected work packages (WPs), 
 each addressing a key challenge in strong-field gravity and gravitational-wave physics. Together, 
 they span environmental effects, extensions of General Relativity, exotic compact objects, and 
