@@ -10,7 +10,7 @@ nav_order: 1
 <div style="width:100vw; margin-left:calc(-50vw + 50%);">
   <img src="/strong-action/assets/img/luminet_bh_1979.jpg"
        alt="First numerical simulation of a black hole appearance"
-       style="width:100%; height:50^;">
+       style="width:100%; max-height:60vh; object-fit:cover;">
 </div>
 
 <p style="font-size:0.75rem; color:#666; margin-top:4px;">
