@@ -93,11 +93,13 @@ Click on each work package below to explore its scientific scope.Click on each w
 
     <div id="wp3" class="collapse" aria-labelledby="wp3-heading" data-parent="#wpAccordion">
       <div class="card-body">
-        WP3 is dedicated to the modelling of Exotic Compact Objects (ECOs) and to the construction of the first full-coalescence gravitational-wave signals for these systems.
-        The aim is to capture deviations from the Kerr black-hole paradigm across all phases of the coalescence process.
-
-        The work focuses on concrete and well-motivated models—such as scalar and vector boson stars and topological stars—for which members of the STRONG consortium have already produced seminal results.
-        By exploring the parameter space of these models, WP3 seeks to span a broad and representative family of black-hole mimickers and to identify robust observational signatures of their exotic nature.
+        WP3 is dedicated to the modelling of Exotic Compact Objects (ECOs) and to the construction 
+        of the first full-coalescence gravitational-wave signals emitted by ECO binaries. The aim 
+        is to capture deviations from the Kerr black-hole paradigm across all phases of the coalescence process.
+        The WP focuses on concrete and well-motivated models for which members of the STRONG consortium have 
+        already produced seminal results. By exploring the parameter space of these models, WP3 seeks to span 
+        a broad and representative family of black-hole mimickers and to identify robust observational 
+        signatures of their exotic nature.
       </div>
     </div>
   </div>
