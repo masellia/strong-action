@@ -43,13 +43,13 @@ STRONG pursues the following overarching objectives:
 <hr>
 
 <div style="display:flex; align-items:center; gap:16px; font-size:0.85rem; color:#555;">
-  <img src="/strong-action/assets/img/EU-flag.png"
+  <img src="/strong-action/assets/img/EU-logo.png"
        alt="European Union flag"
-       width="80">
+       width="100">
 
   <img src="/strong-action/assets/img/MSCA-logo.png"
        alt="Marie Skłodowska-Curie Actions"
-       width="80">
+       width="100">
 
   <span>
     Funded by the European Union under the <br>
