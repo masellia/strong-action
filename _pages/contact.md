@@ -29,5 +29,6 @@ nav_order: 4
 
 ### Network Contacts
 
-Local coordinators for each node are listed on the **Network** page and can be contacted through their institutional webpages.
+Local coordinators for each node are listed on the [Network →](/strong-action/network/) 
+page and can be contacted through their institutional webpages.
 
