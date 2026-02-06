@@ -18,6 +18,7 @@ nav_order: 1
 <div class="network-text" markdown="1">
 
 ### Strong Gravity at the Frontiers of Fundamental Physics
+<br>
 
 **STRONG** is a Marie Skłodowska-Curie Staff Exchange Action dedicated to understanding gravity in its most extreme manifestations, where compact objects, high-energy phenomena, and fundamental fields intersect.
 
@@ -36,4 +37,17 @@ STRONG pursues the following overarching objectives:
 - **Explore signatures of new physics beyond General Relativity**, including exotic compact objects and additional fundamental fields.
 - **Strengthen interdisciplinary training and expertise** at the interface of gravitational physics, astrophysics, and high-energy theory.
 
+</div>
+
+
+<hr>
+
+<div style="display:flex; align-items:center; gap:12px; font-size:0.85rem; color:#555;">
+  <img src="/strong-action/assets/img/EU-logo.png"
+       alt="European Union flag"
+       width="80">
+  <span>
+    Funded by the European Union under the <br>
+    Marie Skłodowska-Curie Actions
+  </span>
 </div>
