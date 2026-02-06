@@ -15,6 +15,16 @@ nav_order: 1
 }
 </style>
 
+<div style="width:100vw; margin-left:calc(-50vw + 50%);">
+  <img src="/strong-action/assets/img/home/luminet_bh_1979.jpg"
+       alt="First numerical simulation of a black hole appearance"
+       style="width:100%; height:auto;">
+</div>
+
+<p style="font-size:0.75rem; color:#666; margin-top:4px;">
+  Image credit: J.-P. Luminet, “Image of a spherical black hole with thin accretion disk,” <em>Astronomy & Astrophysics</em> 75:228 (1979) — CC BY-SA 4.0.
+</p>
+
 <div class="network-text" markdown="1">
 
 ### Strong Gravity at the Frontiers of Fundamental Physics
