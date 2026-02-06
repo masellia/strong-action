@@ -61,7 +61,7 @@ STRONG pursues the following overarching objectives:
 ---
 ### News
 <br>
-#- **July 2026** — STRONG kick-off meeting held in L’Aquila.
+#- ** 2026** — TBA.
 
 </div>
 
