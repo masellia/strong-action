@@ -15,6 +15,15 @@ nav_order: 2
 }
 </style>
 
+<style>
+/* Justify text inside WP boxes */
+#wpAccordion .card-body {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+</style>
+
 <div class="network-text" markdown="1">
 
 ### About STRONG
@@ -42,16 +51,11 @@ Click on each work package below to explore its scientific scope.Click on each w
 
     <div id="wp1" class="collapse show" aria-labelledby="wp1-heading" data-parent="#wpAccordion">
       <div class="card-body">
-
-       <div class="network-text" markdown="1">
-
         WP1 investigates how matter fields interact with and influence black holes in strong-gravity regimes.
         The focus is on developing a comprehensive relativistic framework for black-hole solutions embedded in realistic astrophysical environments and on characterising their physical properties.
 
         A central goal of this work package is to understand how environmental effects modify gravitational-wave emission.
         To this end, WP1 studies the associated signals and develops waveform models for both asymmetric systems and comparable-mass binaries, providing key inputs for precision tests of gravity and astrophysical inference.
-       </div>
- 
       </div>
     </div>
   </div>
