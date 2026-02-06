@@ -19,6 +19,7 @@ nav_order: 1
 
 ### Strong Gravity at the Frontiers of Fundamental Physics
 
+<brg>
 
 **STRONG** is a Marie Skłodowska-Curie Staff Exchange Action dedicated to understanding gravity in its most extreme manifestations, where compact objects, high-energy phenomena, and fundamental fields intersect.
 
