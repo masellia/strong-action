@@ -72,11 +72,13 @@ Click on each work package below to explore its scientific scope.Click on each w
 
     <div id="wp2" class="collapse" aria-labelledby="wp2-heading" data-parent="#wpAccordion">
       <div class="card-body">
-        WP2 addresses gravitational-wave signatures of theories beyond General Relativity, with particular emphasis on the role of additional fundamental fields.
-        The objective is to develop accurate waveform models that describe the full coalescence of binary black holes in selected beyond-GR scenarios.
-
-        This work package combines numerical relativity and perturbative techniques to cover the mass range relevant for future gravitational-wave detectors.
-        In parallel, WP2 develops novel effective-field-theory approaches specifically tailored to asymmetric binaries, which are prime targets for space-based observatories.
+        WP2 addresses gravitational-wave signatures of theories beyond General Relativity, 
+        and the role of additional fundamental fields. The objective is to develop accurate 
+        waveform models that describe the full coalescence of binary black holes in 
+        beyond-GR scenarios. This work package combines numerical relativity and perturbative 
+        techniques to cover the mass range relevant for current and future gravitational-wave 
+        detectors. In parallel, WP2 develops novel effective-field-theory approaches specifically 
+        tailored to asymmetric binaries, which are prime targets for space-based observatories.
       </div>
     </div>
   </div>
