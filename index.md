@@ -29,21 +29,33 @@ nav_order: 1
 
 ### Strong Gravity at the Frontiers of Fundamental Physics
 <br>
-**STRONG** is a Marie Skłodowska-Curie Staff Exchange Action dedicated to understanding gravity in its most extreme manifestations, where compact objects, high-energy phenomena, and fundamental fields intersect.
+**STRONG** is a Marie Skłodowska-Curie Staff Exchange Action dedicated to investigating 
+gravity in its most extreme regimes, where compact objects, high-energy phenomena, and 
+fundamental fields interact.
 
-The direct detection of gravitational waves has transformed our ability to observe the Universe, turning black holes and neutron stars into precision laboratories for testing gravity under conditions that cannot be reproduced on Earth. As future ground- and space-based detectors come online, the scientific challenge is no longer detection alone, but the accurate interpretation of increasingly complex signals.
+The direct detection of gravitational waves has transformed our ability to observe the 
+Universe, turning black holes and neutron stars into precision laboratories for testing 
+gravity under conditions that cannot be reproduced on Earth. As future ground- and space-based 
+detectors come online, the scientific challenge is no longer detection alone, but the 
+accurate interpretation of increasingly complex signals.
 
-STRONG addresses this challenge by advancing theoretical and computational tools for modelling compact objects and their gravitational-wave emission, with the aim of probing strong-field gravity, characterising astrophysical environments, and exploring possible extensions of General Relativity.
+STRONG addresses this challenge by advancing theoretical and computational tools for modelling 
+compact objects and their gravitational-wave emission, with the aim of probing strong-field 
+gravity, characterising astrophysical environments, and exploring possible extensions of 
+General Relativity and of the Standard Model of particle physics and Comsology.
 
-By bringing together expertise across gravitational physics, astrophysics, and high-energy theory, STRONG contributes to the scientific foundations required for the next generation of gravitational-wave observations and to the training of researchers working at the interface of these disciplines.
+By bringing together expertise across gravitational physics, astrophysics, and 
+high-energy theory, STRONG contributes to the scientific foundations required 
+for the next generation of gravitational-wave observations and to the 
+training of researchers working at the interface of these disciplines.
 
 ### Objectives
 <br>
 STRONG pursues the following overarching objectives:
 
 - **Advance theoretical modelling of compact objects and gravitational waves** in regimes where strong-field gravity, astrophysical environments, and fundamental fields play a central role.
+- **Explore signatures of new physics**, that can manifest as new fundamental fields coupled to gravity, or exotic forms of matter.
 - **Develop robust and flexible waveform frameworks** suitable for the analysis of data from current and next-generation gravitational-wave detectors.
-- **Explore signatures of new physics beyond General Relativity**, including exotic compact objects and additional fundamental fields.
 - **Strengthen interdisciplinary training and expertise** at the interface of gravitational physics, astrophysics, and high-energy theory.
 
 </div>
