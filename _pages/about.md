@@ -62,7 +62,7 @@ Click on each work package below to explore its scientific scope.Click on each w
   hyphens: auto;
   line-height: 1.45;
   color: #000;
-  font-weight: 400;
+  font-weight: 200;
   padding: 1rem;
 }
 
