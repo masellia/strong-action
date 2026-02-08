@@ -78,10 +78,10 @@ Click on each work package below to explore its scientific scope.Click on each w
   background: currentColor;
   opacity: 0.9;
 }
-.wp1 { color: #2E7D32; }
-.wp2 { color: #1565C0; }
-.wp3 { color: #6A1B9A; }
-.wp4 { color: #C62828; }
+/*.wp1 { color: #2E7D32; }*/
+/*.wp2 { color: #1565C0; }*/
+/*.wp3 { color: #6A1B9A; }*/
+/*.wp4 { color: #C62828; }*/
 
 /* Keep body text normal color */
 .wp-grid .wp-card .card-body { color: inherit; }
