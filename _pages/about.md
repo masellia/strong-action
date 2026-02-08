@@ -36,59 +36,45 @@ Click on each work package below to explore its scientific scope.Click on each w
 </div>
 
 <style>
-/* Grid cards: rounded corners + subtle spacing */
+/* === WP GRID STYLING === */
+
 .wp-grid .wp-card {
   border-radius: 14px;
-  overflow: hidden;            /* ensures rounded corners apply to header/body */
-  border: 2px solid;           /* color set per WP below */
+  border: 2px solid;
   height: 100%;
+  overflow: hidden;
+  box-shadow: none !important;
+  background: #fff;
 }
 
+/* Header */
 .wp-grid .wp-card .card-header {
   background: transparent;
   border-bottom: 1px solid rgba(0,0,0,0.08);
   font-weight: 700;
+  padding: 0.75rem 1rem;
 }
 
+/* Body text */
 .wp-grid .wp-card .card-body {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
   line-height: 1.45;
+  color: #000;
+  padding: 1rem;
 }
 
-/* Colored contours (adjust colors if you want) */
-.wp1 { border-color: #2E7D32; } /* green */
-.wp2 { border-color: #1565C0; } /* blue */
-.wp3 { border-color: #6A1B9A; } /* purple */
-.wp4 { border-color: #C62828; } /* red */
-
-/* Optional: matching left accent bar inside header */
-.wp-grid .wp-card .card-header {
-  position: relative;
-  padding-left: 1.1rem;
-}
-.wp-grid .wp-card .card-header::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 8px;
-  background: currentColor;
-  opacity: 0.9;
-}
-/*.wp1 { color: #2E7D32; }*/
-/*.wp2 { color: #1565C0; }*/
-/*.wp3 { color: #6A1B9A; }*/
-/*.wp4 { color: #C62828; }*/
-
-/* Keep body text normal color */
-.wp-grid .wp-card .card-body { color: inherit; }
+/* Colored borders (only) */
+.wp1 { border-color: #2E7D32; }
+.wp2 { border-color: #1565C0; }
+.wp3 { border-color: #6A1B9A; }
+.wp4 { border-color: #C62828; }
 </style>
 
 <div class="row wp-grid">
 
+  <!-- WP1 -->
   <div class="col-md-6 mb-4">
     <div class="card wp-card wp1">
       <div class="card-header">
@@ -102,6 +88,7 @@ Click on each work package below to explore its scientific scope.Click on each w
     </div>
   </div>
 
+  <!-- WP2 -->
   <div class="col-md-6 mb-4">
     <div class="card wp-card wp2">
       <div class="card-header">
@@ -115,6 +102,7 @@ Click on each work package below to explore its scientific scope.Click on each w
     </div>
   </div>
 
+  <!-- WP3 -->
   <div class="col-md-6 mb-4">
     <div class="card wp-card wp3">
       <div class="card-header">
@@ -128,6 +116,7 @@ Click on each work package below to explore its scientific scope.Click on each w
     </div>
   </div>
 
+  <!-- WP4 -->
   <div class="col-md-6 mb-4">
     <div class="card wp-card wp4">
       <div class="card-header">
