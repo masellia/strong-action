@@ -8,18 +8,18 @@ nav_order: 4
 
 ### Coordination
 
-**Andrea Maselli** - Coordinator 
+**Andrea Maselli** - Project Coordinator 
 
 - Website: [link](https://andreamaselli85.wixsite.com/home)
 - Email: andrea.maselli@gssi.it
 
-**Francesco della Rocca** - Project Manager
+**Francesco della Rocca** - Project Coordinator
 
-- Email: andrea.maselli@gssi.it
+- Email: francesco.dellarocca@gssi.it
 
-**Merixtell Corbera** - Project Manager
+**Merixtell Corbera** - Project Coordinator
 
-- Email: andrea.maselli@gssi.it
+- Email: meritxell.corbera@gssi.it
 
 ---
 
