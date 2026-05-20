@@ -10,7 +10,6 @@ nav_order: 4
 
 **Andrea Maselli** - Project Coordinator 
 
-- Website: [link](https://andreamaselli85.wixsite.com/home)
 - Email: andrea.maselli@gssi.it
 
 **Francesco della Rocca** - Project Coordinator
@@ -25,7 +24,7 @@ nav_order: 4
 
 ### Usefull Links Related to the Project
 
-- STRONG website on Cordis: [link](https://masellia.github.io/strong-action/)
+- STRONG website on Cordis: [link](https://cordis.europa.eu/project/id/101299389/)
 - 30 years of Marie Skłodowska-Curie Actions [link](https://marie-sklodowska-curie-actions.ec.europa.eu/30th-anniversary)
 - Marie Skłodowska-Curie Actions - Staff Exchange: [link](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/staff-exchanges)
 - GSSI: [link](https://www.gssi.it/)
