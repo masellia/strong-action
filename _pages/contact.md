@@ -22,7 +22,7 @@ nav_order: 4
 
 ---
 
-### Usefull Links Related to the Project
+### Useful Links Related to the Project
 
 - STRONG website on Cordis: [link](https://cordis.europa.eu/project/id/101299389/)
 - 30 years of Marie Skłodowska-Curie Actions [link](https://marie-sklodowska-curie-actions.ec.europa.eu/30th-anniversary)
