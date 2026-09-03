@@ -4,7 +4,7 @@ title: Publications
 permalink: /publications/
 body_class: page-network
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 <style>
@@ -17,12 +17,12 @@ nav_order: 3
 
 <div class="network-text" markdown="1">
 
-Here you can find research publications produced by members of STRONG within the 
+Here you can find research publications produced by members of STRONG within the
 project action.
 
-Each entry links to the corresponding **arXiv preprint**, and — once available — to the 
-**journal publication** via its DOI. 
-For convenience, a **BibTeX citation** can be copied directly for use in articles, 
+Each entry links to the corresponding **arXiv preprint**, and — once available — to the
+**journal publication** via its DOI.
+For convenience, a **BibTeX citation** can be copied directly for use in articles,
 reports, and presentations.
 
 </div>
@@ -41,23 +41,29 @@ reports, and presentations.
 {% assign pubs = site.data.publications %}
 
 {% for block in pubs %}
+
 <h2 class="pubs-year">{{ block.year }}</h2>
 
 {% for p in block.papers %}
+
 <div class="pub-item">
 
   <!-- Title -->
   <p class="pub-title">{{ p.title }}</p>
 
   <!-- Authors -->
-  {% if p.authors %}
+
+{% if p.authors %}
+
   <div class="pub-authors">
     {{ p.authors }}
   </div>
   {% endif %}
 
   <!-- Journal (only when available) -->
-  {% if p.journal %}
+
+{% if p.journal %}
+
   <div class="pub-journal">
     {{ p.journal }}
   </div>
@@ -83,6 +89,7 @@ reports, and presentations.
       </button>
       <span class="pub-status" data-bibtex-status></span>
     {% endif %}
+
   </div>
 
 </div>

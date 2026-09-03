@@ -1,6 +1,6 @@
 _site
 .bundle
-.DS_store
+.DS_Store
 .idea
 .jekyll-cache
 .jekyll-metadata
@@ -13,3 +13,15 @@ assets/rendercv/rendercv_output/*.typ
 node_modules/
 vendor_config_dev.yml
 _config_dev.yml
+
+# Credentials and private keys
+id_rsa
+id_rsa.*
+id_dsa
+id_dsa.*
+id_ecdsa
+id_ecdsa.*
+id_ed25519
+id_ed25519.*
+*.pem
+*.key

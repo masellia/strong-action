@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Network 
+title: Network
 permalink: /network/
 body_class: page-network
 nav: true
@@ -19,12 +19,13 @@ nav_order: 3
 
 The **STRONG network** brings together a distributed network of research groups with complementary expertise in gravitational physics, compact objects, and strong-field tests of gravity.
 
-A central element of the network is the **secondment programme**, which allows senior researchers 
-as well as early-career researchers (PhD students and postdoctoral fellows) from European 
-beneficiary institutions to undertake research visits at partner nodes abroad. 
+A central element of the network is the **secondment programme**, which allows senior researchers
+as well as early-career researchers (PhD students and postdoctoral fellows) from European
+beneficiary institutions to undertake research visits at partner nodes abroad.
 These secondments are designed to promote the transfer of knowledge, methodologies, and technical skills across institutions and geographical regions.
 
 The network is organised around:
+
 - **Beneficiaries**, which form the core of the consortium and host the main research activities;
 - **Partners**, including leading research centres outside Europe, which provide specialised expertise and an international research environment.
 
@@ -80,6 +81,7 @@ Use the interactive map and sidebar below to explore the individual nodes and lo
       <hr/>
       <div id="node-list" style="max-height:60vh; overflow:auto;"></div>
     </div>
+
   </div>
 
   <div class="col-md-8">
@@ -87,8 +89,17 @@ Use the interactive map and sidebar below to explore the individual nodes and lo
   </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIINfQ3ynhH5VLGTFujxLoY0Q1i0ZxXKuwM="
+  crossorigin="anonymous"
+/>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin="anonymous"
+></script>
 
 <script>
 (function () {

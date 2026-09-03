@@ -3,12 +3,12 @@ layout: page
 title: Contacts & Links
 permalink: /contacts/
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 ### Coordination
 
-**Andrea Maselli** - Project Coordinator 
+**Andrea Maselli** - Project Coordinator
 
 - Email: andrea.maselli@gssi.it
 
@@ -33,6 +33,5 @@ nav_order: 4
 
 ### Network Contacts
 
-Local coordinators for each node are listed on the [Network](/strong-action/network/) 
+Local coordinators for each node are listed on the [Network](/strong-action/network/)
 page and can be contacted through their institutional webpages.
-
