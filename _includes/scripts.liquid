@@ -6,6 +6,11 @@
 <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
 <script defer src="{{ '/assets/js/no_defer.js' | relative_url | bust_file_cache }}"></script>
 
+{% if page.leaflet %}
+  <script src="{{ '/assets/vendor/leaflet/leaflet.js' | relative_url | bust_file_cache }}"></script>
+  <script src="{{ '/assets/js/network-map.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
+
 {% if site.enable_medium_zoom %}
   <script
     defer

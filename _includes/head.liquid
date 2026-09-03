@@ -2,12 +2,15 @@
 
 <meta
   http-equiv="Content-Security-Policy"
-  content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org; font-src 'self' data: https://cdn.jsdelivr.net https://fonts.gstatic.com; connect-src 'self';"
+  content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.tile.openstreetmap.org; font-src 'self' data: https://cdn.jsdelivr.net https://fonts.gstatic.com; connect-src 'self';"
 >
 
 <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
 <link rel="stylesheet" href="{{ site.third_party_libraries.google_fonts.url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% if page.leaflet %}
+  <link rel="stylesheet" href="{{ '/assets/vendor/leaflet/leaflet.css' | relative_url | bust_file_cache }}">
+{% endif %}
 <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
 
 <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache }}">

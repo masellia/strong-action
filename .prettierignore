@@ -3,5 +3,6 @@
 **/*.min.js
 assets/css/main.scss
 assets/js/search/*.js
+assets/vendor/**
 _sass/font-awesome/*.scss
 _scripts/*
