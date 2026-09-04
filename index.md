@@ -60,13 +60,6 @@ STRONG pursues the following overarching objectives:
 - **Develop robust and flexible waveform frameworks** suitable for the analysis of data from current and next-generation gravitational-wave detectors.
 - **Strengthen interdisciplinary training and expertise** at the interface of gravitational physics, astrophysics, and high-energy theory.
 
----
-
-### News
-
-<br>
-#- ** 2026** — TBA.
-
 </div>
 
 <hr>
