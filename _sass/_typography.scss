@@ -4,6 +4,28 @@
 
 @use "variables" as v;
 
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.navbar {
+  font-weight: 300;
+}
+
 p,
 h1,
 h2,
