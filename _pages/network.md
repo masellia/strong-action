@@ -90,7 +90,7 @@ Use the interactive map and sidebar below to explore the individual nodes and lo
     <div
       id="strong-map"
       data-geojson-url="{{ site.baseurl }}/assets/data/nodes.geojson"
-      style="height: 70vh; border-radius: 12px;"
+      style="width: 100%; aspect-ratio: 16 / 9; border-radius: 12px;"
     ></div>
   </div>
 </div>

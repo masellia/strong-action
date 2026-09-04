@@ -76,8 +76,6 @@ nav_order: 5
   <div class="news-row news-header" aria-hidden="true">
     <span>Date</span>
     <span>Event</span>
-    <span>Description</span>
-    <span>Image</span>
   </div>
 
 {% assign news_items = site.data.news | sort: 'date' | reverse %}
